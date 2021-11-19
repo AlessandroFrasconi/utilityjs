@@ -2,6 +2,8 @@
 
 A group of utilty fro JavaScript Programmers
 
+<details><summary>Button</summary>
+
 ## Button
 
 **Constructor**
@@ -31,6 +33,8 @@ var btn = new Button("Press", "btn", () => {}, "block");
 | .disable()                          | Show the button disabled                                                     | null         |
 | .addClass([class])                  | Add class [class] in the classList of the button                             | null         |
 | .deleteClass([class])               | Delete class [class] in the classList of the button                          | null         |
+
+</details>
 
 ## headNavBar
 
