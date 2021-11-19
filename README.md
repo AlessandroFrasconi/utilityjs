@@ -36,6 +36,7 @@ var btn = new Button("Press", "btn", () => {}, "block");
 
 </details>
 
+<details><summary>Navigation Bar</summary>
 ## headNavBar
 
 **Constructor**
@@ -51,7 +52,9 @@ hnb.show();
 [items] = ex: 'bho'.
 [img] = link of an image.
 [where] = 'header', '#homepage'.
+</details>
 
+<details><summary>Login UI</summary>
 ## loginUI
 
 **Constructor**
@@ -78,6 +81,9 @@ lgn.show();
 | .show()                | Show the login UI null         |
 | .hide()                | Hide the login UI null         |
 
+</details>
+
+<details><summary>Verify Mail Sent UI</summary>
 ## verifyMailSent
 
 **Constructor**
@@ -92,6 +98,9 @@ vms.show();
 [mail] = e-mail sent mail
 [where] = 'body', '#loginDiv', ...
 
+</details>
+
+<details><summary>Message</summary>
 ## message
 
 **Constructor**
@@ -106,7 +115,9 @@ var mex = new message("Hello Word", "OK", () => {}, "body");
 [btnText] = text of the button
 [onSubmit] = function on click the button
 [where] = 'body', '#loginDiv', ...
+</details>
 
+<details><summary>Month</summary>
 ## month
 
 **Constructor**
@@ -130,6 +141,8 @@ m.toFullName(); // return 'Agosto'
 | .toInt()        | Get number [0-11] of the month from a text ('febbraio' -> return 1) | number       |
 | .toFullName()   | Get month in letter from a number (1 -> return 'febbraio')          | string       |
 | .getAllMonths() | Return all month as Array                                           | string array |
+
+</details>
 
 ## Methods
 
