@@ -410,6 +410,19 @@ class month {
 
 
 class utility{
+    createButton(clas, txt, onclick, id) {
+        var btn = document.createElement('button');
+        btn.className = clas;
+        btn.innerText = txt;
+        btn.style.marginRight = '1vh';
+        btn.setAttribute('onclick', onclick);
+        if (id) {
+            btn.setAttribute('id', id);
+        }
+        return btn;
+    }
+
+    
 getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
     var d = new Date();
     if (format == 'dd/MM/yy')
@@ -428,23 +441,13 @@ getCurrentTime() {
     var d = new Date();
     return addZeroLessTen(d.getHours()) + ':' + addZeroLessTen(d.getMinutes()) + ':' + addZeroLessTen(d.getSeconds()) + ':' + addZeroLessTen(d.getMilliseconds());
 }
+    
 
 addZeroLessTen(number) {
     return (number >= 10) ? number : '0' + number;
 }
 
 
-createButton(clas, txt, onclick, id) {
-    var btn = document.createElement('button');
-    btn.className = clas;
-    btn.innerText = txt;
-    btn.style.marginRight = '1vh';
-    btn.setAttribute('onclick', onclick);
-    if (id) {
-        btn.setAttribute('id', id);
-    }
-    return btn;
-}
 
 objectToArray = obj => {
     const keys = Object.keys(obj);
