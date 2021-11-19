@@ -528,4 +528,23 @@ showInParent(where, what, clear = false) {
 scrollTo(whr) {
     $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
 }
+
+bootstrapInsert(){
+$('#bootstrapLink').remove();
+}
+
+bootstrapRemove(){
+$('head').append(` <!-- Collegamento bootstrap -->
+<link rel="stylesheet" id="bootstrapLink" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">`)
+}
+
+jQueryInsert(){
+    $('head').append(`<!--Collegamento jQuery -->
+    <script class="jqueryLink" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script class="jqueryLink" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>`)
+}
+
+jQueryRemove(){
+    $('.jqueryLink').remove();
+}
 }

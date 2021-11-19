@@ -150,6 +150,25 @@ m.toFullName(); // return 'Agosto'
 | .getAllMonths() | Return all month as Array                                           | string array |
 
 </details>
+<details><summary>Bootstrap</summary>
+
+## Bootstrap integration
+
+```Javascript
+bootstrapRemove() //for remove
+bootstrapInsert() //for add
+```
+</details>
+
+<details><summary>jQuery</summary>
+
+## jQuery integration
+
+```Javascript
+jQueryRemove() //for remove
+jQueryInsert() //for add
+```
+</details>
 
 <details><summary>Methods</summary>
 
