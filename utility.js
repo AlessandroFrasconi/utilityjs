@@ -409,7 +409,7 @@ class month {
 }
 
 
-class utility{
+class Utility{
     createButton(clas, txt, onclick, id) {
         var btn = document.createElement('button');
         btn.className = clas;

@@ -90,11 +90,17 @@ A group of utilty fro JavaScript Programmers
 | .toFullName()   | Get month in letter from a number (1 -> return 'febbraio')          | string       |
 | .getAllMonths() | Return all month as Array                                           | string array |
 
-createButton([classes], [text], [onclick], [id])
-getCurrentDate([format], [monthInLetter])
-getCurrentTime()
-addZeroLessTen([number])
-objectToArray([array])
-convertWeekDay([day])
-showInParent([where], [what], [clear*])
-scrollTo([where])
+## Methods
+
+**Class "Utility"**
+
+| Method                                           | Description |
+| ------------------------------------------------ | ----------- |
+| createButton([classes], [text], [onclick], [id]) | desc        |
+| getCurrentDate([format], [monthInLetter])        |             |
+| getCurrentTime()                                 |             |
+| addZeroLessTen([number])                         |             |
+| objectToArray([array])                           |             |
+| convertWeekDay([day])                            |             |
+| showInParent([where], [what], [clear*])          |             |
+| scrollTo([where])                                |             |
