@@ -188,6 +188,6 @@ new Utility().jQueryInsert() //for add
 | convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
-| checkNotEmpty([array])                           | Check each obj is not Empty            | bool                    |
+| checkNotEmpty([array])                           | Check each obj is not Empty            | bool (true)             |
 
 </details>
