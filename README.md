@@ -6,6 +6,10 @@ A group of utilty fro JavaScript Programmers
 
 **Constructor**
 
+```javascript
+var btn = new Button ("Press", "btn", (){}, 'block');
+```
+
 > new Button ([text of button], [classes style], [onClick function], [display mode])
 
 [display mode] = 'block', 'inline', ...
