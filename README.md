@@ -105,4 +105,10 @@ A group of utilty fro JavaScript Programmers
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
 
-![header](https://capsule-render.vercel.app/api?text=Hello%World!&fontColor=d6ace6)
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
