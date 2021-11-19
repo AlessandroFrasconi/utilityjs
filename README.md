@@ -90,7 +90,7 @@ A group of utilty fro JavaScript Programmers
 | .toFullName()   | Get month in letter from a number (1 -> return 'febbraio')          | string       |
 | .getAllMonths() | Return all month as Array                                           | string array |
 
-[#76e43f]## Methods
+## [#76e43f]Methods
 
 **Class "Utility"**
 
