@@ -90,7 +90,7 @@ A group of utilty fro JavaScript Programmers
 | .toFullName()   | Get month in letter from a number (1 -> return 'febbraio')          | string       |
 | .getAllMonths() | Return all month as Array                                           | string array |
 
-## [#76e43f]Methods
+## [#f03c15] Methods
 
 **Class "Utility"**
 
@@ -105,4 +105,4 @@ A group of utilty fro JavaScript Programmers
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+![header](https://capsule-render.vercel.app/api?text=Hello%World!&fontColor=d6ace6)
