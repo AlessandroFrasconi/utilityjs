@@ -7,7 +7,7 @@ A group of utilty fro JavaScript Programmers
 **Constructor**
 
 ```javascript
-var btn = new Button ("Press", "btn", (){}, 'block');
+var btn = new Button("Press", "btn", () => {}, "block");
 ```
 
 > new Button ([text of button], [classes style], [onClick function], [display mode])
@@ -36,6 +36,11 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 
 **Constructor**
 
+```javascript
+var hnb = new headNavBar("light", "uJs", "item1", "", "body");
+hnb.show();
+```
+
 > new headNavBar ([theme], [brand], [items], [img], [where]\*)
 
 [theme] = 'light', 'dark'.
@@ -46,6 +51,15 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 ## loginUI
 
 **Constructor**
+
+```javascript
+var lgn = new loginUI(
+  () => {},
+  () => {},
+  "body"
+);
+lgn.show();
+```
 
 > new loginUI ([loginFunction], [registerFunction], [where])
 
@@ -64,6 +78,11 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 
 **Constructor**
 
+```javascript
+var vms = new verifiyMailSent("mail@gmail.com", "body");
+vms.show();
+```
+
 > new verifyMailSent ([mail],[where])
 
 [mail] = e-mail sent mail
@@ -72,6 +91,10 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 ## message
 
 **Constructor**
+
+```javascript
+var mex = new message("Hello Word", "OK", () => {}, "body");
+```
 
 > new message ([message], [btnText],[onSubmit],[where])
 
@@ -84,6 +107,16 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 
 **Constructor**
 
+```javascript
+var m = new month("agosto");
+m.toInt(); // return 7
+```
+
+```javascript
+var m = new month(7);
+m.toFullName(); // return 'Agosto'
+```
+
 > new month ([month])
 
 [month] = '0', 'gennaio'
@@ -94,7 +127,7 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 | .toFullName()   | Get month in letter from a number (1 -> return 'febbraio')          | string       |
 | .getAllMonths() | Return all month as Array                                           | string array |
 
-## [#f03c15] Methods
+## Methods
 
 **Class "Utility"**
 
@@ -108,11 +141,3 @@ var btn = new Button ("Press", "btn", (){}, 'block');
 | convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
-
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
