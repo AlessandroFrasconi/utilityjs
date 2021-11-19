@@ -37,6 +37,7 @@ var btn = new Button("Press", "btn", () => {}, "block");
 </details>
 
 <details><summary>Navigation Bar</summary>
+
 ## headNavBar
 
 **Constructor**
@@ -52,9 +53,11 @@ hnb.show();
 [items] = ex: 'bho'.
 [img] = link of an image.
 [where] = 'header', '#homepage'.
+
 </details>
 
 <details><summary>Login UI</summary>
+
 ## loginUI
 
 **Constructor**
@@ -84,6 +87,7 @@ lgn.show();
 </details>
 
 <details><summary>Verify Mail Sent UI</summary>
+
 ## verifyMailSent
 
 **Constructor**
@@ -101,6 +105,7 @@ vms.show();
 </details>
 
 <details><summary>Message</summary>
+
 ## message
 
 **Constructor**
@@ -115,9 +120,11 @@ var mex = new message("Hello Word", "OK", () => {}, "body");
 [btnText] = text of the button
 [onSubmit] = function on click the button
 [where] = 'body', '#loginDiv', ...
+
 </details>
 
 <details><summary>Month</summary>
+
 ## month
 
 **Constructor**
@@ -144,6 +151,8 @@ m.toFullName(); // return 'Agosto'
 
 </details>
 
+<details><summary>Methods</summary>
+
 ## Methods
 
 **Class "Utility"**
@@ -158,3 +167,5 @@ m.toFullName(); // return 'Agosto'
 | convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
+
+</details>
