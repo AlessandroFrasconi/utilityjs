@@ -94,13 +94,13 @@ A group of utilty fro JavaScript Programmers
 
 **Class "Utility"**
 
-| Method                                           | Description |
-| ------------------------------------------------ | ----------- |
-| createButton([classes], [text], [onclick], [id]) | desc        |
-| getCurrentDate([format], [monthInLetter])        |             |
-| getCurrentTime()                                 |             |
-| addZeroLessTen([number])                         |             |
-| objectToArray([array])                           |             |
-| convertWeekDay([day])                            |             |
-| showInParent([where], [what], [clear*])          |             |
-| scrollTo([where])                                |             |
+| Method                                           | Description                            | Return                  |
+| ------------------------------------------------ | -------------------------------------- | ----------------------- |
+| createButton([classes], [text], [onclick], [id]) | Make a button                          | HTML Button element     |
+| getCurrentDate([format], [monthInLetter])        | Return current data                    | String ('dd/MM/yy')     |
+| getCurrentTime()                                 | Return current time                    | String ('01:10:31:42')  |
+| addZeroLessTen([number])                         | Add 0 in numbers less then 10          | String ('01' / '13')    |
+| objectToArray([array])                           | Convert an object to an Array          | Array                   |
+| convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
+| showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
+| scrollTo([where])                                | Scroll screen at a specific position   | --                      |
