@@ -408,7 +408,9 @@ class month {
     }
 }
 
-function getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
+
+class utility{
+getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
     var d = new Date();
     if (format == 'dd/MM/yy')
         if (!monthInLetter)
@@ -422,17 +424,17 @@ function getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
             return d.getFullYear() + '/' + new month(d.getMonth()).toFullName() + '/' + addZeroLessTen(d.getDate());
 }
 
-function getCurrentTime() {
+getCurrentTime() {
     var d = new Date();
     return addZeroLessTen(d.getHours()) + ':' + addZeroLessTen(d.getMinutes()) + ':' + addZeroLessTen(d.getSeconds()) + ':' + addZeroLessTen(d.getMilliseconds());
 }
 
-function addZeroLessTen(number) {
+addZeroLessTen(number) {
     return (number >= 10) ? number : '0' + number;
 }
 
 
-function createButton(clas, txt, onclick, id) {
+createButton(clas, txt, onclick, id) {
     var btn = document.createElement('button');
     btn.className = clas;
     btn.innerText = txt;
@@ -444,7 +446,7 @@ function createButton(clas, txt, onclick, id) {
     return btn;
 }
 
-const objectToArray = obj => {
+objectToArray = obj => {
     const keys = Object.keys(obj);
     const res = [];
     for (let i = 0; i < keys.length; i++) {
@@ -453,7 +455,7 @@ const objectToArray = obj => {
     return res;
 }
 
-function convertWeekDay(nDay) {
+convertWeekDay(nDay) {
     var string;
     switch (+nDay) {
         case 0:
@@ -510,7 +512,7 @@ function convertWeekDay(nDay) {
     return +string;
 }
 
-function showInParent(where, what, clear = false) {
+showInParent(where, what, clear = false) {
     where.parentNode.id != 'body' ? where = where.parentNode.id : where = where.id;
     if (clear) {
         $('#' + where).empty();
@@ -520,6 +522,7 @@ function showInParent(where, what, clear = false) {
     $('#' + where).append(what);
 }
 
-function scrollTo(whr) {
+scrollTo(whr) {
     $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
+}
 }
