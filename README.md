@@ -155,9 +155,10 @@ m.toFullName(); // return 'Agosto'
 ## Bootstrap integration
 
 ```Javascript
-bootstrapRemove() //for remove
-bootstrapInsert() //for add
+new Utility().bootstrapRemove() //for remove
+new Utility().bootstrapInsert() //for add
 ```
+
 </details>
 
 <details><summary>jQuery</summary>
@@ -165,9 +166,10 @@ bootstrapInsert() //for add
 ## jQuery integration
 
 ```Javascript
-jQueryRemove() //for remove
-jQueryInsert() //for add
+new Utility().jQueryRemove() //for remove
+new Utility().jQueryInsert() //for add
 ```
+
 </details>
 
 <details><summary>Methods</summary>
@@ -186,5 +188,6 @@ jQueryInsert() //for add
 | convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
+| checkNotEmpty([array])                           | Check each obj is not Empty            | bool                    |
 
 </details>

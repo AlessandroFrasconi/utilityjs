@@ -529,22 +529,52 @@ scrollTo(whr) {
     $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
 }
 
-bootstrapInsert(){
-$('#bootstrapLink').remove();
+bootstrapRemove(){
+    $('#bootstrapLink').remove();
 }
 
-bootstrapRemove(){
-$('head').append(` <!-- Collegamento bootstrap -->
-<link rel="stylesheet" id="bootstrapLink" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">`)
+bootstrapInsert(){
+    var s = document.createElement("link");
+s.rel = "stylesheet";
+s.id = "bootstrapLink";
+s.href= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+s.integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk";
+s.crossOrigin = 'anonymous';
+document.querySelector("head").append(s);
 }
 
 jQueryInsert(){
-    $('head').append(`<!--Collegamento jQuery -->
-    <script class="jqueryLink" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script class="jqueryLink" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>`)
+    var s = document.createElement("script");
+s.type = "text/javascript";
+s.src = "http://code.jquery.com/jquery-3.5.1.min.js";
+s.className = 'jqueryLink';
+document.querySelector("head").append(s);
+
+var q = document.createElement("script");
+q.type = "text/javascript";
+q.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
+q.className = 'jqueryLink';
+document.querySelector("head").append(s);
 }
 
 jQueryRemove(){
     $('.jqueryLink').remove();
 }
+
+checkNotEmpty(list) {
+    var x = true;
+    list.forEach((item, i) => {
+        if (item == '' || item == null || item.toString().toLowerCase() == 'seleziona*' || item.toString().toLowerCase() == 'seleziona') {
+            x = false;
+            return 0;
+        }
+    })
+    return x;
 }
+
+}
+Date.prototype.toDateInputValue = (function() {
+    var local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+})
