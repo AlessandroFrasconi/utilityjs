@@ -150,6 +150,51 @@ m.toFullName(); // return 'Agosto'
 | .getAllMonths() | Return all month as Array                                           | string array |
 
 </details>
+</details>
+
+<details><summary>Search Bar</summary>
+
+## month
+
+**Constructor**
+
+```javascript
+var sBar = new searchBar("#divSearch");
+sBar.popolate([
+  {
+    html: "Prima opzione di ricerca",
+    onclick: "console.log('clicked')",
+  },
+  {
+    html: "Seconda opzione di ricerca",
+    onclick: "console.log('clicked')",
+  },
+]);
+sBar.place();
+```
+
+> new searchBar ([divContainer])
+
+[divContainer] = '#divSearch', '.searchContainer', ecc..
+
+| Method                 | Description                           | Return |
+| ---------------------- | ------------------------------------- | ------ |
+| .popolate([arrayJSON]) | Insert Options Menu                   | --     |
+| .place()               | Place search bar in the div container | --     |
+
+v [arrayJSON] v
+[
+{
+html: "Prima opzione di ricerca",
+onclick: "console.log('clicked')",
+},
+{
+html: "Seconda opzione di ricerca",
+onclick: "console.log('clicked')",
+},
+]
+
+</details>
 <details><summary>Bootstrap</summary>
 
 ## Bootstrap integration
