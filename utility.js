@@ -409,7 +409,6 @@ class month {
 }
 
 
-class Utility{
     createButton(clas, txt, onclick, id) {
         var btn = document.createElement('button');
         btn.className = clas;
@@ -572,7 +571,7 @@ checkNotEmpty(list) {
     return x;
 }
 
-}
+
 Date.prototype.toDateInputValue = (function() {
     var local = new Date(this);
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
