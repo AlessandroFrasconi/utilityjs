@@ -408,8 +408,59 @@ class month {
     }
 }
 
+class searchBar{
+    constructor(div){
+        this.div = div;
+    }
 
-    createButton(clas, txt, onclick, id) {
+    place(){
+        $(this.div).append(`
+        <input type="text" id="input-search" class="input-search" onkeyup="new searchBar(null).search()" placeholder="Search..">
+
+        <ul id="list-result-search">
+        </ul>`)
+        if(this.listOptions != null) this.popolate(this.listOptions);
+    }
+
+
+    popolate(array){
+        this.listOptions = array;
+        $('#list-result-search').empty();
+        objectToArray(array).forEach(el =>{
+            let li = document.createElement('li');
+            li.innerHTML = el.html;
+            li.className="search-list-item";
+            li.setAttribute('onclick', el.onclick);
+            $('#list-result-search').append(li);
+        })
+    }
+
+ search() {
+  let input, filter, ul, li, a;
+  input = document.getElementById("input-search");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("list-result-search");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  $('#list-result-search').show();
+  for (let i = 0; i < li.length; i++) {
+      a = li[i];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          if(input.value != ''){
+          li[i].style.display = "";}
+          else{
+              li[i].style.display = "none";              
+        }
+      } else {
+        li[i].style.display = "none";
+
+    }
+  }
+}
+}
+
+    function createButton(clas, txt, onclick, id){
         var btn = document.createElement('button');
         btn.className = clas;
         btn.innerText = txt;
@@ -422,7 +473,7 @@ class month {
     }
 
     
-getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
+    function  getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
     var d = new Date();
     if (format == 'dd/MM/yy')
         if (!monthInLetter)
@@ -436,19 +487,19 @@ getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
             return d.getFullYear() + '/' + new month(d.getMonth()).toFullName() + '/' + addZeroLessTen(d.getDate());
 }
 
-getCurrentTime() {
+function getCurrentTime() {
     var d = new Date();
     return addZeroLessTen(d.getHours()) + ':' + addZeroLessTen(d.getMinutes()) + ':' + addZeroLessTen(d.getSeconds()) + ':' + addZeroLessTen(d.getMilliseconds());
 }
     
 
-addZeroLessTen(number) {
+function addZeroLessTen(number) {
     return (number >= 10) ? number : '0' + number;
 }
 
 
 
-objectToArray = obj => {
+ objectToArray = obj => {
     const keys = Object.keys(obj);
     const res = [];
     for (let i = 0; i < keys.length; i++) {
@@ -457,7 +508,7 @@ objectToArray = obj => {
     return res;
 }
 
-convertWeekDay(nDay) {
+function convertWeekDay(nDay) {
     var string;
     switch (+nDay) {
         case 0:
@@ -514,7 +565,7 @@ convertWeekDay(nDay) {
     return +string;
 }
 
-showInParent(where, what, clear = false) {
+function showInParent(where, what, clear = false) {
     where.parentNode.id != 'body' ? where = where.parentNode.id : where = where.id;
     if (clear) {
         $('#' + where).empty();
@@ -524,15 +575,17 @@ showInParent(where, what, clear = false) {
     $('#' + where).append(what);
 }
 
-scrollTo(whr) {
+function scrollTo(whr) {
     $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
 }
 
-bootstrapRemove(){
+class scripts{
+
+ bootstrapRemove(){
     $('#bootstrapLink').remove();
 }
 
-bootstrapInsert(){
+ bootstrapInsert(){
     var s = document.createElement("link");
 s.rel = "stylesheet";
 s.id = "bootstrapLink";
@@ -559,8 +612,9 @@ document.querySelector("head").append(s);
 jQueryRemove(){
     $('.jqueryLink').remove();
 }
+}
 
-checkNotEmpty(list) {
+function checkNotEmpty(list) {
     var x = true;
     list.forEach((item, i) => {
         if (item == '' || item == null || item.toString().toLowerCase() == 'seleziona*' || item.toString().toLowerCase() == 'seleziona') {
