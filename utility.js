@@ -318,11 +318,10 @@ class message {
         onSubmit ? onSubmit += ',$(\'#savedMessage\').remove();' : onSumit = '$(\'#savedMessage\').remove();';
         $('#savedMessage').remove();
         $(where).append(`
-      <div id="savedMessage" style="background-color: red;width: 100%; height: 100vh; color: white; position: fixed; top: 0">
-      <img style="width: 40%; margin-left: 30%; margin-top: 20vh;" src="https://img.icons8.com/cotton/300/000000/check-document.png"/><br><br><br><br>
-      <p style="width: 80%; margin-left: 10%;text-align: center">` + message + `</p><br>
-      <button class="btn btn-warning" style="width: 80%; margin-left: 10%;" onclick="` + onSubmit + `">` + btnText + `</button>
-      <button class="btn btn-outline-light" style="width: 80%;margin-top: 1.5vh; margin-left: 10%; text-align: center" onclick="location.reload()">Indietro</button>
+      <div id="savedMessage">
+      <p style="width: 80%; margin-left: 10%;text-align: center; font-size: 30px">` + message + `</p><br>
+      <button class="btn-message" onclick="` + onSubmit + `">` + btnText + `</button>
+      <button class="btn2-message" onclick="location.reload();">Indietro</button>
       </div>`)
     }
 }
