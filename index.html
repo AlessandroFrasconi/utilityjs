@@ -2,361 +2,391 @@
 <html lang="it" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Utility</title>
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="rgb(255, 184, 65)">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <meta name="description" content="DESCRIZONE">
-    <meta HTTP-EQUIV="keywords" content="">
-    <meta name="author" content="Alessandro Frasconi">
-    <meta name="copyright" content="alessandrofrasconi.com">
+  <meta charset="utf-8" />
+  <title>Utility</title>
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="rgb(255, 184, 65)" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <meta name="description" content="DESCRIZONE" />
+  <meta http-equiv="keywords" content="" />
+  <meta name="author" content="Alessandro Frasconi" />
+  <meta name="copyright" content="alessandrofrasconi.com" />
 
-    <!-- style-->
-    <link rel="stylesheet" href="style.css?v=0.0.0.1">
+  <!-- style-->
+  <link rel="stylesheet" href="style.css?v=0.0.0.1" />
 
-    <!--codes-->
-    <script lang="text/javascript" src="utility.js"></script>
-    <!--Collegamento jQuery -->
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <!--codes-->
+  <script lang="text/javascript" src="utility.js"></script>
 
-    <!--bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
-        
+  <!--Collegamento jQuery -->
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-
-
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <header></header>
+  <h1 style="padding: 1vh">Documentazione</h1>
 
-
-    <header></header>
-    <h1 style="padding: 1vh">Documentazione</h1>
-
-    <div id="body">
-
-        <div id="leftSide">
-            <table class="table table-light table-striped">
-                <tr>
-                    <td>Button</td>
-                </tr>
-                <tr>
-                    <td>headNavBar</td>
-                </tr>
-                <tr>
-                    <td>loginUI</td>
-                </tr>
-                <tr>
-                    <td>confirmMessage</td>
-                </tr>
-                <tr>
-                    <td>verifyMailSent</td>
-                </tr>
-                <tr>
-                    <td>message</td>
-                </tr>
-                <tr>
-                    <td>month</td>
-                </tr>
-                <tr>
-                    <td>createButton()</td>
-                </tr>
-                <tr>
-                    <td>objectToArray()</td>
-                </tr>
-                <tr>
-                    <td>convertWeekDay()</td>
-                </tr>
-                <tr>
-                    <td>showInParent</td>
-                </tr>
-                <tr>
-                    <td>scrollTo</td>
-                </tr>
-            </table>
-
-        </div>
-
-        <div id="rightSide">
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>Button</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new Button ([text of button], [classes style], [onClick function], [display mode])
-                        <br><small style="font-size: 10px"> [display mode] = 'block', 'inline', ...</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-                            <tr>
-                                <td>.getButton()</td>
-                                <td>Return the button</td>
-                                <td>HTML Element</td>
-                            </tr>
-                            <tr>
-                                <td>.getClass()</td>
-                                <td>Return the button's class</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td>.getText()</td>
-                                <td>Return the button's text</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td>.getFunction()</td>
-                                <td>Return the function of the button</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td>.setText([text])</td>
-                                <td>Set the text ([text]) of the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.setClass([class])</td>
-                                <td>Set the classes ([class]) of the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.setFunction([function])</td>
-                                <td>Set the function on click ([function]) of the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.setAttribute([attribute], [value])</td>
-                                <td>Set an attribute in the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.appendIn([selector])</td>
-                                <td>Append the button in [selector] (must be a string ex: 'body' or '.divClass')</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.hide()</td>
-                                <td>Hide the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.show()</td>
-                                <td>Show the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.enable()</td>
-                                <td>Set the button enable</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.disable()</td>
-                                <td>Show the button disabled</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.addClass([class])</td>
-                                <td>Add class [class] in the classList of the button</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.deleteClass([class])</td>
-                                <td>Delete class [class] in the classList of the button</td>
-                                <td>null</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>headNavBar</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new headNavBar ([theme], [brand], [items], [img], [where]*)
-                        <br>
-                        <small style="font-size: 10px"> [theme] = 'light', 'dark'.
-                        </small>
-                        <br>
-                        <small style="font-size: 10px"> [items] = ex: 'bho'.</small>
-                        <br>
-                        <small style="font-size: 10px"> [img] = link of an image.</small>
-                        <br>
-                        <small style="font-size: 10px"> [where] = 'header', '#homepage'.</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-                            <tr>
-                                <td>No methods</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>loginUI</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new loginUI ([loginFunction], [registerFunction], [where])
-                        <br><small style="font-size: 10px"> [loginFunction] = function to login</small>
-                        <br><small style="font-size: 10px"> [registerFunction] = function for registation</small>
-                        <br><small style="font-size: 10px"> [where] = 'body', '#loginDiv', ...</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-                            <tr>
-                                <td>.setLoginFunction()</td>
-                                <td>Set the login function</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.setRegisterFunction()</td>
-                                <td>Set the register function</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.show()</td>
-                                <td>Show the login UI</td>
-                                <td>null</td>
-                            </tr>
-                            <tr>
-                                <td>.hide()</td>
-                                <td>Hide the login UI</td>
-                                <td>null</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>verifyMailSent</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new verifyMailSent ([mail],[where])
-                        <br><small style="font-size: 10px"> [mail] = e-mail sent mail </small>
-                        <br><small style="font-size: 10px"> [where] = 'body', '#loginDiv', ...</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-                            <tr>
-                                <td>No methods</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>message</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new message ([message], [btnText],[onSubmit],[where])
-                        <br><small style="font-size: 10px"> [message] = message to show</small>
-                        <br><small style="font-size: 10px"> [btnText] = text of the button</small>
-                        <br><small style="font-size: 10px"> [onSubmit] = function on click the button</small>
-                        <br><small style="font-size: 10px"> [where] = 'body', '#loginDiv', ...</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-
-                            <tr>
-                                <td>No methods</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class='classItem'>
-                <div>
-                    <h3 class='classHeader classHitem'>month</h3>
-                </div>
-                <div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Constructor</h5>
-                        new month ([month])
-                        <br><small style="font-size: 10px"> [month] = '0', 'gennaio'</small>
-                    </div>
-                    <div class='constructorDiv'>
-                        <h5 class="typeGroup">Methods</h5>
-                        <table class="table table-light table-striped table_methods_description">
-                            <tr>
-                                <td>.toInt()</td>
-                                <td>Get number [0-11] of the month from a text ('febbraio' -> return 1)</td>
-                                <td>number</td>
-                            </tr>
-                            <tr>
-                                <td>.toFullName()</td>
-                                <td>Get month in letter from a number (1 -> return 'febbraio')</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td>.getAllMonths())</td>
-                                <td>Return all month as Array</td>
-                                <td>string array</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="functionItem">
-                <div>
-                    <h3 class='classHeader classHitem'>createButton([classes], [text], [onclick], [id])</h3>
-                </div>
-            </div>
-
-            <div class="functionItem">
-                <div>
-                    <h3 class='classHeader classHitem'>objectToArray([array])</h3>
-                </div>
-            </div>
-
-            <div class="functionItem">
-                <div>
-                    <h3 class='classHeader classHitem'>convertWeekDay([day])</h3>
-                </div>
-            </div>
-            <div class="functionItem">
-                <div>
-                    <h3 class='classHeader classHitem'>showInParent([where], [what], [clear*])</h3>
-                </div>
-            </div>
-            <div class="functionItem">
-                <div>
-                    <h3 class='classHeader classHitem'>scrollTo([where])</h3>
-                </div>
-            </div>
-
-        </div>
+  <div id="body">
+    <div id="leftSide">
+      <table class="table table-light table-striped">
+        <tr>
+          <td>Button</td>
+        </tr>
+        <tr>
+          <td>headNavBar</td>
+        </tr>
+        <tr>
+          <td>loginUI</td>
+        </tr>
+        <tr>
+          <td>confirmMessage</td>
+        </tr>
+        <tr>
+          <td>verifyMailSent</td>
+        </tr>
+        <tr>
+          <td>message</td>
+        </tr>
+        <tr>
+          <td>month</td>
+        </tr>
+        <tr>
+          <td>createButton()</td>
+        </tr>
+        <tr>
+          <td>objectToArray()</td>
+        </tr>
+        <tr>
+          <td>convertWeekDay()</td>
+        </tr>
+        <tr>
+          <td>showInParent</td>
+        </tr>
+        <tr>
+          <td>scrollTo</td>
+        </tr>
+      </table>
     </div>
+
+    <div id="rightSide">
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">Button</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new Button ([text of button], [classes style], [onClick function],
+            [display mode])
+            <br /><small style="font-size: 10px">
+              [display mode] = 'block', 'inline', ...</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>.getButton()</td>
+                <td>Return the button</td>
+                <td>HTML Element</td>
+              </tr>
+              <tr>
+                <td>.getClass()</td>
+                <td>Return the button's class</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>.getText()</td>
+                <td>Return the button's text</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>.getFunction()</td>
+                <td>Return the function of the button</td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>.setText([text])</td>
+                <td>Set the text ([text]) of the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setClass([class])</td>
+                <td>Set the classes ([class]) of the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setFunction([function])</td>
+                <td>Set the function on click ([function]) of the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setAttribute([attribute], [value])</td>
+                <td>Set an attribute in the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.appendIn([selector])</td>
+                <td>
+                  Append the button in [selector] (must be a string ex: 'body'
+                  or '.divClass')
+                </td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.hide()</td>
+                <td>Hide the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.show()</td>
+                <td>Show the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.enable()</td>
+                <td>Set the button enable</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.disable()</td>
+                <td>Show the button disabled</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.addClass([class])</td>
+                <td>Add class [class] in the classList of the button</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.deleteClass([class])</td>
+                <td>Delete class [class] in the classList of the button</td>
+                <td>null</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">headNavBar</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new headNavBar ([theme], [brand], [items], [img], [where]*)
+            <br />
+            <small style="font-size: 10px">
+              [theme] = 'light', 'dark'.
+            </small>
+            <br />
+            <small style="font-size: 10px"> [items] = ex: 'bho'.</small>
+            <br />
+            <small style="font-size: 10px"> [img] = link of an image.</small>
+            <br />
+            <small style="font-size: 10px">
+              [where] = 'header', '#homepage'.</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>No methods</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">loginUI</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new loginUI ([loginFunction], [registerFunction], [where])
+            <br /><small style="font-size: 10px">
+              [loginFunction] = function to login</small>
+            <br /><small style="font-size: 10px">
+              [registerFunction] = function for registation</small>
+            <br /><small style="font-size: 10px">
+              [where] = 'body', '#loginDiv', ...</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>.setLoginFunction()</td>
+                <td>Set the login function</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setRegisterFunction()</td>
+                <td>Set the register function</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.show()</td>
+                <td>Show the login UI</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.hide()</td>
+                <td>Hide the login UI</td>
+                <td>null</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">verifyMailSent</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new verifyMailSent ([mail],[where])
+            <br /><small style="font-size: 10px">
+              [mail] = e-mail sent mail
+            </small>
+            <br /><small style="font-size: 10px">
+              [where] = 'body', '#loginDiv', ...</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>No methods</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">message</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new message ([message], [btnText],[onSubmit],[where])
+            <br /><small style="font-size: 10px">
+              [message] = message to show</small>
+            <br /><small style="font-size: 10px">
+              [btnText] = text of the button</small>
+            <br /><small style="font-size: 10px">
+              [onSubmit] = function on click the button</small>
+            <br /><small style="font-size: 10px">
+              [where] = 'body', '#loginDiv', ...</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>No methods</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="classItem">
+        <div>
+          <h3 class="classHeader classHitem">month</h3>
+        </div>
+        <div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Constructor</h5>
+            new month ([month])
+            <br /><small style="font-size: 10px">
+              [month] = '0', 'gennaio'</small>
+          </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Methods</h5>
+            <table class="table table-light table-striped table_methods_description">
+              <tr>
+                <td>.toInt()</td>
+                <td>
+                  Get number [0-11] of the month from a text ('febbraio' ->
+                  return 1)
+                </td>
+                <td>number</td>
+              </tr>
+              <tr>
+                <td>.toFullName()</td>
+                <td>
+                  Get month in letter from a number (1 -> return 'febbraio')
+                </td>
+                <td>string</td>
+              </tr>
+              <tr>
+                <td>.getAllMonths())</td>
+                <td>Return all month as Array</td>
+                <td>string array</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="functionItem">
+        <div>
+          <h3 class="classHeader classHitem">
+            createButton([classes], [text], [onclick], [id])
+          </h3>
+        </div>
+      </div>
+
+      <div class="functionItem">
+        <div>
+          <h3 class="classHeader classHitem">objectToArray([array])</h3>
+        </div>
+      </div>
+
+      <div class="functionItem">
+        <div>
+          <h3 class="classHeader classHitem">convertWeekDay([day])</h3>
+        </div>
+      </div>
+      <div class="functionItem">
+        <div>
+          <h3 class="classHeader classHitem">
+            showInParent([where], [what], [clear*])
+          </h3>
+        </div>
+      </div>
+      <div class="functionItem">
+        <div>
+          <h3 class="classHeader classHitem">scrollTo([where])</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vitorBtncontainer">
+    <div class="vitorBtnCenter">
+      <button class="vitorBtn">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span>HOVER ME</span>
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

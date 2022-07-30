@@ -5,10 +5,6 @@
 .carta3 {
   display: none;
 }
-.carta1,
-.carta2 {
-  display: none;
-}
 
 .contenitoreLogin {
   position: absolute;
@@ -480,15 +476,16 @@
 }
 
 #savedMessage {
-  background-color: #cfcfcf;
+  background-color: #fbfbfb;
   width: calc(80% - 2vh);
   padding: 3vh 1vh;
   color: white;
   position: fixed;
   top: 10vh;
   margin-left: 10%;
-  border-radius: 2vh;
+  border-radius: 1vh;
   color: black;
+  box-shadow: black 0px 0px 28px 1px;
 }
 
 .btn-message {
@@ -536,17 +533,18 @@
   border-radius: 0.25rem;
   transition: 0.5s;
   background-color: transparent;
-  color: white;
-  border-color: #f8f9fa;
+  color: black;
+  border-color: black;
   width: 80%;
   margin-top: 1.5vh;
   margin-left: 10%;
   text-align: center;
+ 
 }
 .btn2-message:hover {
-  background-color: #f8f9fa;
-  color: #212529;
-  border-color: #212529;
+  background-color: black;
+  color: #f8f9fa;
+  border-color: #f8f9fa;
 }
 
 /*---------------------------------------*/
