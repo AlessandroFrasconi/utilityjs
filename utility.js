@@ -190,6 +190,14 @@ function validateEmail(email) {
         overflow-y: auto;
         max-height: 87vh;
     }
+
+    #login #login_subDiv{
+        padding: 5%;
+    }
+
+    #login input{
+        color: black!important;
+    }
     
     .centered{
         position: absolute;
