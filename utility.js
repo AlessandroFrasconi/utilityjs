@@ -1,44 +1,73 @@
-
 class loginUI {
-    constructor(loginFunction, registerFunction, where, linkCondizioniUso, linkCondizioniGenerali, linkPrivacy, rememberPasswordFunction) {
+    constructor(where, dati) {
+        /*
+        
+        let dati = {
+            'linkCondizioniUso': '',
+            'linkCondizioniGenerali': '',
+            'linkPrivacy': '',
+            'function_login': '',
+            'function_register': '',
+            'show_register': true,
+            'show_passwordDimenticata': false,
+            'function_confermaPasswordDimenticata': '',
+            'show_accediSocial': false,
+            'extra_input_registrazione': [],
+            'linkLoginGoogle': '',
+            'linkLoginFacebook': '',
+        }
+
+        let lg = new loginUI(dati);
+
+        username = $('#email')[0].value;
+        password = $('#password')[0].value;
+
+        nome = $('#nome')[0].value;
+        cognome = $('#cognome')[0].value;
+        email = $('#email_rg')[0].value;
+        sesso = lg.sessoRegistrazione(); (m, f, a)
+        password1 = $('#password_rg')[0].value;
+        password1 = $('#password2_rg')[0].value;
+
+        */
+
         this.temp = document.createElement('div');
         this.temp.setAttribute('id', 'loginForm');
         this.where = where;
         this.temp.innerHTML = (`
-
         <div class="contenitoreLogin">
             <div class="cartaLogin"></div>
-
-
             <div class="cartaLogin carta1">
                 <div id="login" class="centered">
                     <div id="login_subDiv">
                         <div class="header_container">
                             <div class="header_title header_title_active" onclick="mostraAccedi()">
                             Accedi
-                            </div>
+                            </div>` + (dati.show_register ? `
                         <div class="header_title" onclick="mostraRegistrati()">
                         Registrati
-                        </div>
+                        </div>` : '') + `
                     </div>
                 <div id="accedi_div">
                     <div class="top_container">
                         <h2 class="top_title">Accedi</h2>
+                        ` + (dati.show_accediSocial ? `
                     <label class="top_label">con il social che preferisci</label>
                     <div class="imgs_container">
-                        <img onclick="ancoraNonDisponibile()" src="https://img.icons8.com/color/64/000000/google-logo.png" />
-                        <img onclick="ancoraNonDisponibile()" src="https://img.icons8.com/fluency/64/000000/facebook-new.png" />
+                        <img onclick="`+ dati.linkLoginGoogle + `" src="https://img.icons8.com/color/64/000000/google-logo.png" />
+                        <img onclick="`+ dati.linkLoginFacebook + `" src="https://img.icons8.com/fluency/64/000000/facebook-new.png" />
                     </div>
                     <label class="top_label">oppure con la tue email e password</label>
+                `: `<label class="top_label">Con la tue email e password</label>`) + `
                 </div>
-
                 <div class="dati_container">
                     <input type="text" id="email" placeholder="Email" />
                     <input type="password" id="password" placeholder="Password" />
+                    `+ (dati.show_passwordDimenticata ? `
                     <div class="bottom_dati_container">
                         <a href="#" onclick="show_recupera_password()">Hai dimenticato la password?</a>
-                    </div>
-                    <button class="accedi_btn" onclick="`+ loginFunction + `">Accedi</button>
+                    </div>` : '') + `
+                    <button class="accedi_btn" onclick="`+ dati.function_login + `">Accedi</button>
                 </div>
             </div>
 
@@ -72,20 +101,21 @@ class loginUI {
                     </div>
                     </label>
                 </div>
+                <div id="extra_input"></div>
 
                 <input type="password" id="password_rg" placeholder="Password" />
                 <input type="password" id="password2_rg" placeholder="Ripeti password" />
 
 
+                `+ ((dati.linkCondizioniUso == undefined || dati.linkCondizioniGenerali == undefined || dati.linkPrivacy == undefined) ? `
                 <p class="disclamers">
                     Con la presente registrazione dichiaro di aver letto e accettato
-                    le <a href="`+ linkCondizioniUso + `">condizioni d’uso</a>,
-                    <a href="`+ linkCondizioniGenerali + `">le condizioni generali</a> e
-                    <a href="`+ linkPrivacy + `">l'informativa privacy</a>. In mancanza, non è
+                    le <a href="`+ dati.linkCondizioniUso + `">condizioni d’uso</a>,
+                    <a href="`+ dati.linkCondizioniGenerali + `">le condizioni generali</a> e
+                    <a href="`+ dati.linkPrivacy + `">l'informativa privacy</a>. In mancanza, non è
                     possibile attivare un account e/o ricevere i servizi offerti.
-                </p>
-
-                <button class="register_btn" onclick="`+ registerFunction + `">
+                </p>` : '') + `
+                <button class="register_btn" onclick="`+ dati.function_register + `">
                     Registrati
                 </button >
                     <div class="bottomForDevice"></div>
@@ -107,7 +137,7 @@ class loginUI {
                     Annulla
                 </button>
                 <button class="btn btn-primary btn_big_mobile" style="margin-top: 2vh; width: 100%; border-radius: 0.5vh"
-                    id="btn_recupero" onclick="`+ rememberPasswordFunction + `()">
+                    id="btn_recupero" onclick="`+ dati.function_confermaPasswordDimenticata + `()">
                     Conferma
                 </button>
             </div>
@@ -116,11 +146,12 @@ class loginUI {
     </div >
 
 
-    <script type="text/javascript">
-    function show_recupera_password() {
-        $('#recupero_mail').fadeIn();
-        $('#login_subDiv').hide();
-    }
+<script type="text/javascript">
+
+function show_recupera_password() {
+    $('#recupero_mail').fadeIn();
+    $('#login_subDiv').hide();
+}
 
     
 function mostraAccedi() {
@@ -188,7 +219,7 @@ function validateEmail(email) {
         padding: 4vh;
         border-radius: 0.5vh;
         overflow-y: auto;
-        max-height: 87vh;
+        max-height: 100vh;
     }
 
     #login #login_subDiv{
@@ -378,6 +409,7 @@ function validateEmail(email) {
         border-radius: 0.5vh;
         margin-bottom: 5vh;
         transition: 0.3s;
+        cursor: pointer;
     }
     
     
@@ -423,7 +455,15 @@ function validateEmail(email) {
     }
     </style>
         `);
+
         $(where).append(this.temp.outerHTML);
+
+        if (dati.extra_input_registrazione.length != 0) {
+            dati.extra_input_registrazione.forEach(addinput => {
+                $('#extra_input').append(addinput);
+            })
+        }
+
         document.querySelector('#loginForm').style.display = 'none';
     }
 
@@ -432,6 +472,14 @@ function validateEmail(email) {
     }
     setRegisterFunction(f) {
         document.querySelector('#register_btn').setAttribute('onclick', f);
+    }
+
+    sessoRegistrazione() {
+        let sesso;
+        if ($('#maschio')[0].checked) sesso = 'm';
+        else if ($('#femmina')[0].checked) sesso = 'f';
+        else if ($('#altro')[0].checked) sesso = 'a';
+        return sesso;
     }
 
     show() {
@@ -620,26 +668,28 @@ class confirmMessage {
 
     remove() {
         $('#confirmForm').remove();
+        $('#scurisci_div').remove();
     }
 
     inizialize() {
         $('#confirmForm').remove();
-        $(this.where).append(`
-            < div id = "confirmForm" class="modal modal-dialog modal-dialog-centered" style = "position:fixed" >
+        $('#scurisci_div').remove();
+        $(this.where).append(`<div id="scurisci_div"></div>`);
+        $('#scurisci_div').append(`
+            <div id="confirmForm" class="modal modal-dialog modal-dialog-centered" style = "position:fixed" >
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="cfTitle">` + this.title + `</h5>
-                            <button type="button" class="btn-close closeCf" data-bs-dismiss="modal" aria-label="Close" onclick="$('#confirmForm').fadeOut()"></button>
                         </div>
                         <div class="modal-body" id="cfMessage">` + this.message + `</div>
                         <div class="modal-footer">
-                            <button type="button" class="closeCf btn btn-secondary" onclick="$('#confirmForm').fadeOut()">Chiudi</button>
+                            <button type="button" class="closeCf btn btn-secondary" onclick="$('#confirmForm').fadeOut();$('#scurisci_div').remove();">Chiudi</button>
                             ` + this.button.outerHTML + `
                         </div>
                     </div>
                 </div>
-      </ > `)
+      </div> `)
     }
 
 

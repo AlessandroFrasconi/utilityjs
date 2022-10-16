@@ -1,17 +1,40 @@
 <!doctype html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <script src="utility.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js" class="jqueryLink"></script>
-        <script> let srcBar =  new searchBar('#divSearch'); </script>
-    </head>
-        <body>
-        <div id="divSearch"></div>
 
-        <script>
-            var mex = new message("Hello Word", "OK", () => {}, "body");
-        </script>
-        
-    </body>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="utility.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js" class="jqueryLink"></script>
+    <script> let srcBar = new searchBar('#divSearch'); </script>
+</head>
+
+<body>
+    <div id="divSearch"></div>
+
+    <div id="prova" style="width: 100%; height: 100vh;position:fixed; top: 0; left:0"></div>
+
+    <script>
+        let dati = {
+            'linkCondizioniUso': '',
+            'linkCondizioniGenerali': '',
+            'linkPrivacy': '',
+            'function_login': '',
+            'function_register': '',
+            'show_register': true,
+            'show_passwordDimenticata': false,
+            'function_confermaPasswordDimenticata': '',
+            'show_accediSocial': true,
+            'extra_input_registrazione': [],
+            'linkLoginGoogle': '',
+            'linkLoginFacebook': '',
+        }
+
+        var lg = new loginUI('#prova', dati);
+        console.log(lg.sessoRegistrazione());
+        lg.show();
+    </script>
+
+</body>
+
 </html>

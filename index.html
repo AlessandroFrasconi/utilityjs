@@ -45,7 +45,7 @@
           <td>headNavBar</td>
         </tr>
         <tr>
-          <td>loginUI</td>
+          <td> <a href="#loginUI">loginUI</a></td>
         </tr>
         <tr>
           <td>confirmMessage</td>
@@ -73,6 +73,15 @@
         </tr>
         <tr>
           <td>scrollTo</td>
+        </tr>
+        <tr>
+          <td><a href="#getCurrentDate">getCurrentDate</a> </td>
+        </tr>
+        <tr>
+          <td><a href="#getCurrentTime">getCurrentTime</a> </td>
+        </tr>
+        <tr>
+          <td><a href="#addZeroLessTen">addZeroLessTen</a> </td>
         </tr>
       </table>
     </div>
@@ -209,18 +218,31 @@
 
       <div class="classItem">
         <div>
-          <h3 class="classHeader classHitem">loginUI</h3>
+          <a name="loginUI">
+            <h3 class="classHeader classHitem">loginUI</h3>
+          </a>
         </div>
         <div>
           <div class="constructorDiv">
             <h5 class="typeGroup">Constructor</h5>
-            new loginUI ([loginFunction], [registerFunction], [where])
-            <br /><small style="font-size: 10px">
-              [loginFunction] = function to login</small>
-            <br /><small style="font-size: 10px">
-              [registerFunction] = function for registation</small>
+            new loginUI ([where], [options])
             <br /><small style="font-size: 10px">
               [where] = 'body', '#loginDiv', ...</small>
+            <br><small style="font-size: 10px">
+              [options] = let dati = {<br>
+              'linkCondizioniUso': '',<br>
+              'linkCondizioniGenerali': '',<br>
+              'linkPrivacy': '',<br>
+              'function_login': '',<br>
+              'function_register': '',<br>
+              'show_register': true,<br>
+              'show_passwordDimenticata': false,<br>
+              'function_confermaPasswordDimenticata': '',<br>
+              'show_accediSocial': false,<br>
+              'extra_input_registrazione': [],<br>
+              'linkLoginGoogle': '',<br>
+              'linkLoginFacebook': ''<br>
+              }</small>
           </div>
           <div class="constructorDiv">
             <h5 class="typeGroup">Methods</h5>
@@ -236,6 +258,11 @@
                 <td>null</td>
               </tr>
               <tr>
+                <td>.sessoRegistrazione()</td>
+                <td>Show selected sex in registration</td>
+                <td>string</td>
+              </tr>
+              <tr>
                 <td>.show()</td>
                 <td>Show the login UI</td>
                 <td>null</td>
@@ -247,6 +274,38 @@
               </tr>
             </table>
           </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Example</h5>
+            <code>
+              let dati = {<br>
+                'linkCondizioniUso': '',<br>
+                'linkCondizioniGenerali': '',<br>
+                'linkPrivacy': '',<br>
+                'function_login': '',<br>
+                'function_register': '',<br>
+                'show_register': true,<br>
+                'show_passwordDimenticata': false,<br>
+                'function_confermaPasswordDimenticata': '',<br>
+                'show_accediSocial': false,<br>
+                'extra_input_registrazione': [],<br>
+                'linkLoginGoogle': '',<br>
+                'linkLoginFacebook': ''<br>
+              }<br><br>
+    
+            let lg = new loginUI(dati);<br><br>
+    
+            let username = $('#email')[0].value;<br>
+            let password = $('#password')[0].value;<br><br>
+    
+            let nome = $('#nome')[0].value;<br>
+            let cognome = $('#cognome')[0].value;<br>
+            let email = $('#email_rg')[0].value;<br>
+            let sesso = lg.sessoRegistrazione(); //(m, f, a)<br>
+            let password1 = $('#password_rg')[0].value;<br>
+            let password1 = $('#password2_rg')[0].value;<br>
+            </code>
+          </div>
+
         </div>
       </div>
 
@@ -373,20 +432,36 @@
           <h3 class="classHeader classHitem">scrollTo([where])</h3>
         </div>
       </div>
+
+      <div class="functionItem">
+        <div>
+          <a name="getCurrentDate">
+            <h3 class="classHeader classHitem">getCurrentDate([format], [monthInLetter]) </h3>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="functionItem">
+        <div>
+          <a name="getCurrentTime">
+            <h3 class="classHeader classHitem">getCurrentTime() </h3>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="functionItem">
+        <div>
+          <a name="addZeroLessTen">
+            <h3 class="classHeader classHitem">addZeroLessTen([number]) </h3>
+          </a>
+
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="vitorBtncontainer">
-    <div class="vitorBtnCenter">
-      <button class="vitorBtn">
-        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-        </svg>
-        <span>HOVER ME</span>
-      </button>
-    </div>
-  </div>
 </body>
 
 </html>
