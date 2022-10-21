@@ -107,7 +107,7 @@ class loginUI {
                 <input type="password" id="password2_rg" placeholder="Ripeti password" />
 
 
-                `+ ((dati.linkCondizioniUso == undefined || dati.linkCondizioniGenerali == undefined || dati.linkPrivacy == undefined) ? `
+                `+ ((dati.linkCondizioniUso != undefined && dati.linkCondizioniGenerali != undefined && dati.linkPrivacy != undefined) ? `
                 <p class="disclamers">
                     Con la presente registrazione dichiaro di aver letto e accettato
                     le <a href="`+ dati.linkCondizioniUso + `">condizioni d’uso</a>,
@@ -577,16 +577,18 @@ class headNavBar {
         if (!img) img = '';
         let items = [];
         if (itms.length != 0) {
-            objectToArray(itms[0]['items']).forEach((item, i) => {
+            //
+            itms.forEach((item_m, i) => {
+                let item = objectToArray(item_m)[0];
                 if (item.type == 'item') {
-                    var a = document.createElement('a');
+                    let a = document.createElement('a');
                     a.className = 'nav-link';
                     a.setAttribute('onclick', item.onClick);
                     a.setAttribute('style', 'cursor: pointer');
-                    a.innerHTML = Object.keys(itms[0]['items'])[i];
+                    a.innerHTML = Object.keys(item_m)[0];
                     if (item.disabled == 'true') a.disabled = true;
                     items.push(a);
-                } else if (item.type == 'dropdown') {
+                } else if (item.type == 'dropdown') {//da rivedere 
                     //console.log(item['items']);
                     var li = document.createElement('li');
                     li.className = 'nav-item dropdown';
@@ -618,9 +620,10 @@ class headNavBar {
         }
         var list = '';
         items.forEach((item, i) => {
-
             list += item.outerHTML;
         });
+
+        //console.log(list);
 
         var text =
             `<nav class="navbar navbar-expand-lg navbar-` + theme + ` bg-` + theme + `">
@@ -638,18 +641,17 @@ class headNavBar {
         </div>
       </nav>
       `;
+        console.log(where);
         document.querySelector(where).innerHTML = text;
     }
 }
 
-
-
-class confirmMessage {
+class confirm_message {
     //new confirmMessage('Conferma', 'messagess', createButton('btn-message','Click','',''), 'body')
-    constructor(title, message, button, where) {
+    constructor(title, message, buttons, where) {
         this.title = title;
         this.message = message;
-        this.button = button;
+        this.buttons = buttons;
         this.where = where;
         this.inizialize();
     }
@@ -662,8 +664,18 @@ class confirmMessage {
         this.message = mx;
     }
 
-    setButton(btn) {
-        this.button = btn;
+    setButtons(btn) {
+        this.buttons = btn;
+    }
+
+    hide() {
+        $('#confirmForm').fadeOut();
+        $('#scurisci_div').fadeOut();
+    }
+
+    show() {
+        $('#confirmForm').fadeIn();
+        $('#scurisci_div').fadeIn();
     }
 
     remove() {
@@ -675,6 +687,10 @@ class confirmMessage {
         $('#confirmForm').remove();
         $('#scurisci_div').remove();
         $(this.where).append(`<div id="scurisci_div"></div>`);
+        let bottoni = '';
+        this.buttons.forEach(button => {
+            bottoni += button.outerHTML;
+        })
         $('#scurisci_div').append(`
             <div id="confirmForm" class="modal modal-dialog modal-dialog-centered" style = "position:fixed" >
                 <div class="modal-dialog">
@@ -685,7 +701,7 @@ class confirmMessage {
                         <div class="modal-body" id="cfMessage">` + this.message + `</div>
                         <div class="modal-footer">
                             <button type="button" class="closeCf btn btn-secondary" onclick="$('#confirmForm').fadeOut();$('#scurisci_div').remove();">Chiudi</button>
-                            ` + this.button.outerHTML + `
+                            ` + bottoni + `
                         </div>
                     </div>
                 </div>
@@ -694,110 +710,39 @@ class confirmMessage {
 
 
 }
-class verifyMailSent {
-    constructor(mail, where) {
-        $('#verifyMailSent').remove();
-        $(where).append(`
-            < div id = "verifyMailSent" style = "background-color: red;width: 100%; height: 100vh; color: white; position: fixed; top: 0" >
-      <img style="width: 40%; margin-left: 30%; margin-top: 20vh;" src="https://img.icons8.com/plasticine/300/000000/verified-account.png"/><br><br><br><br>
-      <p style="width: 80%; margin-left: 10%;text-align: center">Abbiamo inviato una mail di conferma all'indirizzo email <b>` + mail + `</b>, clicca sul link per confermare la tua identità.</p><br>
-      <button class="btn btn-warning" style="width: 80%; margin-left: 10%;" onclick="function(){location.reload()}">Fatto</button>
-      <button class="btn btn-outline-light" style="width: 80%;margin-top: 1.5vh; margin-left: 10%; text-align: center" onclick="function(){location.reload()}">Indietro</button>
-      </>`)
-    }
-}
 
-class message {
-    constructor(message, btnText, onSubmit, where) {
-        onSubmit ? onSubmit += ',$(\'#savedMessage\').remove();' : onSubmit = '$(\'#savedMessage\').remove();';
-        $('#savedMessage').remove();
-        $(where).append(`
-        <div id="savedMessage">
-        <p style="width: 80%; margin-left: 10%;text-align: center; font-size: 30px">` + message + `</p><br>
-        <button class="btn-message" onclick="` + onSubmit + `">` + btnText + `</button>
-        <button class="btn2-message" onclick="location.reload();">Indietro</button>
-        </div>`)
-    }
-}
+class scripts {
 
-class month {
-
-    constructor(month) {
-        this.mese = month;
+    bootstrapRemove() {
+        $('#bootstrapLink').remove();
     }
 
-    toInt() {
-        switch (this.mese) {
-            case 'gennaio':
-                return 0;
-                break;
-            case 'febbraio':
-                return 1;
-                break;
-            case 'marzo':
-                return 2;
-                break;
-            case 'aprile':
-                return 3;
-                break;
-            case 'maggio':
-                return 4;
-                break;
-            case 'giugno':
-                return 5;
-                break;
-            case 'luglio':
-                return 6;
-                break;
-            case 'agosto':
-                return 7;
-                break;
-            case 'settembre':
-                return 8;
-                break;
-            case 'ottobre':
-                return 9;
-                break;
-            case 'novembre':
-                return 10;
-                break;
-            case 'dicembre':
-                return 11;
-                break;
-        }
+    bootstrapInsert() {
+        var s = document.createElement("link");
+        s.rel = "stylesheet";
+        s.id = "bootstrapLink";
+        s.href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        s.integrity = "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk";
+        s.crossOrigin = 'anonymous';
+        document.querySelector("head").append(s);
     }
 
-    toFullName() {
-        switch (+this.mese) {
-            case 0:
-                return 'gennaio';
-            case 1:
-                return 'febbraio';
-            case 2:
-                return 'marzo';
-            case 3:
-                return 'aprile';
-            case 4:
-                return 'maggio';
-            case 5:
-                return 'giugno';
-            case 6:
-                return 'luglio';
-            case 7:
-                return 'agosto';
-            case 8:
-                return 'settembre';
-            case 9:
-                return 'ottobre';
-            case 10:
-                return 'novembre';
-            case 11:
-                return 'dicembre';
-        }
-    }
+    jQueryInsert() {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "http://code.jquery.com/jquery-3.5.1.min.js";
+        s.className = 'jqueryLink';
+        document.querySelector("head").append(s);
 
-    getAllMonths() {
-        return ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+        var q = document.createElement("script");
+        q.type = "text/javascript";
+        q.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
+        q.className = 'jqueryLink';
+        document.querySelector("head").append(s);
+    } s
+
+    jQueryRemove() {
+        $('.jqueryLink').remove();
     }
 }
 
@@ -854,6 +799,78 @@ class searchBar {
     }
 }
 
+//todo: docu da qua
+function month_toFullName(mese) {
+    switch (+mese) {
+        case 0:
+            return 'gennaio';
+        case 1:
+            return 'febbraio';
+        case 2:
+            return 'marzo';
+        case 3:
+            return 'aprile';
+        case 4:
+            return 'maggio';
+        case 5:
+            return 'giugno';
+        case 6:
+            return 'luglio';
+        case 7:
+            return 'agosto';
+        case 8:
+            return 'settembre';
+        case 9:
+            return 'ottobre';
+        case 10:
+            return 'novembre';
+        case 11:
+            return 'dicembre';
+    }
+}
+function month_toInt(mese) {
+    switch (mese) {
+        case 'gennaio':
+            return 0;
+            break;
+        case 'febbraio':
+            return 1;
+            break;
+        case 'marzo':
+            return 2;
+            break;
+        case 'aprile':
+            return 3;
+            break;
+        case 'maggio':
+            return 4;
+            break;
+        case 'giugno':
+            return 5;
+            break;
+        case 'luglio':
+            return 6;
+            break;
+        case 'agosto':
+            return 7;
+            break;
+        case 'settembre':
+            return 8;
+            break;
+        case 'ottobre':
+            return 9;
+            break;
+        case 'novembre':
+            return 10;
+            break;
+        case 'dicembre':
+            return 11;
+            break;
+    }
+}
+function month_list() {
+    return ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+}
 function createButton(clas, txt, onclick, id) {
     var btn = document.createElement('button');
     btn.className = clas;
@@ -865,35 +882,28 @@ function createButton(clas, txt, onclick, id) {
     }
     return btn;
 }
-
-
-function getCurrentDate(format = 'dd/MM/yy', monthInLetter) {
+function getCurrentDate(format = 'dd/MM/yy', monthInLetter, separator = '/') {
     var d = new Date();
     if (format == 'dd/MM/yy')
         if (!monthInLetter)
-            return addZeroLessTen(d.getDate()) + '/' + addZeroLessTen((d.getMonth() + 1)) + '/' + d.getFullYear();
+            return addZeroLessTen(d.getDate()) + separator + addZeroLessTen((d.getMonth() + 1)) + separator + d.getFullYear();
         else
-            return addZeroLessTen(d.getDate()) + '/' + new month(d.getMonth()).toFullName() + '/' + d.getFullYear();
+            return addZeroLessTen(d.getDate()) + separator + new month(d.getMonth()).toFullName() + separator + d.getFullYear();
     else if (format = 'yy/MM/dd')
         if (!monthInLetter)
-            return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + addZeroLessTen(d.getDate());
+            return d.getFullYear() + separator + (d.getMonth() + 1) + separator + addZeroLessTen(d.getDate());
         else
-            return d.getFullYear() + '/' + new month(d.getMonth()).toFullName() + '/' + addZeroLessTen(d.getDate());
-}
+            return d.getFullYear() + separator + new month(d.getMonth()).toFullName() + separator + addZeroLessTen(d.getDate());
 
-function getCurrentTime() {
+}
+function getCurrentTime(full, separator = ':') {
     var d = new Date();
-    return addZeroLessTen(d.getHours()) + ':' + addZeroLessTen(d.getMinutes()) + ':' + addZeroLessTen(d.getSeconds()) + ':' + addZeroLessTen(d.getMilliseconds());
+    return addZeroLessTen(d.getHours()) + separator + addZeroLessTen(d.getMinutes()) + (full ? separator + addZeroLessTen(d.getSeconds()) + separator + addZeroLessTen(d.getMilliseconds()) : '');
 }
-
-
 function addZeroLessTen(number) {
     return (number >= 10) ? number : '0' + number;
 }
-
-
-
-objectToArray = obj => {
+function objectToArray(obj) {
     const keys = Object.keys(obj);
     const res = [];
     for (let i = 0; i < keys.length; i++) {
@@ -901,7 +911,6 @@ objectToArray = obj => {
     };
     return res;
 }
-
 function convertWeekDay(nDay) {
     var string;
     switch (+nDay) {
@@ -929,34 +938,48 @@ function convertWeekDay(nDay) {
         default:
             string = '';
     }
+
     if (string != '') return string;
 
-    switch (nDay) {
-        case 'Domenica':
+    switch (nDay.toLowerCase()) {
+        case 'domenica':
             string = 0;
             break;
-        case 'Lunedì':
+        case 'lunedì':
             string = 1;
             break;
-        case 'Martedì':
+        case 'martedì':
             string = 2;
             break;
-        case 'Mercoledì':
+        case 'mercoledì':
             string = 3;
             break;
-        case 'Giovedì':
+        case 'giovedì':
             string = 4;
             break;
-        case 'Venerdì':
+        case 'venerdì':
             string = 5;
             break;
-        case 'Sabato':
+        case 'sabato':
             string = 6;
             break;
         default:
             string = '';
     }
     return +string;
+}
+function checkNotEmpty(list) {
+    var x = true;
+    list.forEach((item, i) => {
+        if (item == '' || item == null || item.toString().toLowerCase() == 'seleziona*' || item.toString().toLowerCase() == 'seleziona') {
+            x = false;
+            return 0;
+        }
+    })
+    return x;
+}
+function scrollTo(whr) {
+    $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
 }
 
 function showInParent(where, what, clear = false) {
@@ -968,57 +991,6 @@ function showInParent(where, what, clear = false) {
     $('#' + where).fadeIn('slow');
     $('#' + where).append(what);
 }
-
-function scrollTo(whr) {
-    $("html,body").animate({ scrollTop: whr == 'top' ? 0 : whr }, 500, function () { });
-}
-
-class scripts {
-
-    bootstrapRemove() {
-        $('#bootstrapLink').remove();
-    }
-
-    bootstrapInsert() {
-        var s = document.createElement("link");
-        s.rel = "stylesheet";
-        s.id = "bootstrapLink";
-        s.href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        s.integrity = "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk";
-        s.crossOrigin = 'anonymous';
-        document.querySelector("head").append(s);
-    }
-
-    jQueryInsert() {
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.src = "http://code.jquery.com/jquery-3.5.1.min.js";
-        s.className = 'jqueryLink';
-        document.querySelector("head").append(s);
-
-        var q = document.createElement("script");
-        q.type = "text/javascript";
-        q.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js";
-        q.className = 'jqueryLink';
-        document.querySelector("head").append(s);
-    } s
-
-    jQueryRemove() {
-        $('.jqueryLink').remove();
-    }
-}
-
-function checkNotEmpty(list) {
-    var x = true;
-    list.forEach((item, i) => {
-        if (item == '' || item == null || item.toString().toLowerCase() == 'seleziona*' || item.toString().toLowerCase() == 'seleziona') {
-            x = false;
-            return 0;
-        }
-    })
-    return x;
-}
-
 
 Date.prototype.toDateInputValue = (function () {
     var local = new Date(this);

@@ -413,6 +413,7 @@
   margin: 1vh;
 }
 
+
 .classHitem {
   color: rgb(10, 65, 10);
   font-style: bold;
@@ -510,15 +511,17 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: white;
+  border-color: #212529;
   width: 80%;
   margin-left: 10%;
+  transition: 0.3s;
 }
 .btn-message:hover {
-  color: #ffc107;
+  color: white;
+  border-color: #212529;
   background-color: #212529;
-  border-color: #ffc107;
+
 }
 .btn2-message {
   display: inline-block;
@@ -562,15 +565,23 @@
 }
 
 #leftSide {
-  width: calc(20% - 4vh);
+  width: calc(30% - 4vh);
   padding: 1vh 2vh;
+  position: fixed;
   min-height: 98vh;
+}
+
+#menu{
+  height: 99vh;
+  overflow-y: auto;
 }
 
 #rightSide {
   width: calc(80% - 4vh);
   padding: 1vh 2vh;
   min-height: 98vh;
+  margin-left: 30%;
+  margin-top: 10vh;
 }
 
 
@@ -581,6 +592,11 @@
 #confirmForm .modal-dialog{
   margin: 5vw!important;
   width: 90vw!important;
+}
+
+#confirmForm .modal-body{
+  overflow-y: auto;
+    height: 70vh;
 }
 
 #scurisci_div{

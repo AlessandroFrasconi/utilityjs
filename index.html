@@ -33,63 +33,61 @@
 
 <body>
   <header></header>
-  <h1 style="padding: 1vh">Documentazione</h1>
 
   <div id="body">
     <div id="leftSide">
-      <table class="table table-light table-striped">
-        <tr>
-          <td>Button</td>
-        </tr>
-        <tr>
-          <td>headNavBar</td>
-        </tr>
-        <tr>
-          <td> <a href="#loginUI">loginUI</a></td>
-        </tr>
-        <tr>
-          <td>confirmMessage</td>
-        </tr>
-        <tr>
-          <td>verifyMailSent</td>
-        </tr>
-        <tr>
-          <td>message</td>
-        </tr>
-        <tr>
-          <td>month</td>
-        </tr>
-        <tr>
-          <td>createButton()</td>
-        </tr>
-        <tr>
-          <td>objectToArray()</td>
-        </tr>
-        <tr>
-          <td>convertWeekDay()</td>
-        </tr>
-        <tr>
-          <td>showInParent</td>
-        </tr>
-        <tr>
-          <td>scrollTo</td>
-        </tr>
-        <tr>
-          <td><a href="#getCurrentDate">getCurrentDate</a> </td>
-        </tr>
-        <tr>
-          <td><a href="#getCurrentTime">getCurrentTime</a> </td>
-        </tr>
-        <tr>
-          <td><a href="#addZeroLessTen">addZeroLessTen</a> </td>
-        </tr>
-      </table>
+      <div id="menu">
+        <table class="table table-light table-striped">
+          <tr>
+            <td><a href="#button">button</a></td>
+          </tr>
+          <tr>
+            <td>headNavBar</td>
+          </tr>
+          <tr>
+            <td> <a href="#loginUI">loginUI</a></td>
+          </tr>
+          <tr>
+            <td><a href="#confirm_message">confirm_message</a></td>
+          </tr>
+          <tr>
+            <td>message</td>
+          </tr>
+          <tr>
+            <td>month</td>
+          </tr>
+          <tr>
+            <td>createButton()</td>
+          </tr>
+          <tr>
+            <td>objectToArray()</td>
+          </tr>
+          <tr>
+            <td>convertWeekDay()</td>
+          </tr>
+          <tr>
+            <td>showInParent</td>
+          </tr>
+          <tr>
+            <td>scrollTo</td>
+          </tr>
+          <tr>
+            <td><a href="#getCurrentDate">getCurrentDate</a> </td>
+          </tr>
+          <tr>
+            <td><a href="#getCurrentTime">getCurrentTime</a> </td>
+          </tr>
+          <tr>
+            <td><a href="#addZeroLessTen">addZeroLessTen</a> </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <div id="rightSide">
       <div class="classItem">
         <div>
-          <h3 class="classHeader classHitem">Button</h3>
+          <h3 class="classHeader classHitem"><a name="button"></a>button</h3>
         </div>
         <div>
           <div class="constructorDiv">
@@ -311,28 +309,63 @@
 
       <div class="classItem">
         <div>
-          <h3 class="classHeader classHitem">verifyMailSent</h3>
+          <h3 class="classHeader classHitem"><a name="confirm_message"></a>confirm_message</h3>
         </div>
         <div>
           <div class="constructorDiv">
             <h5 class="typeGroup">Constructor</h5>
-            new verifyMailSent ([mail],[where])
+            let cm = new confirm_message([title], [message], [array of buttons], [where to show]);
             <br /><small style="font-size: 10px">
-              [mail] = e-mail sent mail
+              [array of buttons] = array of buttons made by <a href="#createButton">createButton()</a> function<br>
+              [where to show] = '#message_div', 'body', ...
             </small>
-            <br /><small style="font-size: 10px">
-              [where] = 'body', '#loginDiv', ...</small>
           </div>
           <div class="constructorDiv">
             <h5 class="typeGroup">Methods</h5>
             <table class="table table-light table-striped table_methods_description">
               <tr>
-                <td>No methods</td>
+                <td>.setTitle([title])</td>
+                <td>Set title of confirm message</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setMessage([message])</td>
+                <td>Set message of confirm message</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.setButtons([array of buttons])</td>
+                <td>Set buttons of confirm message</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.hide()</td>
+                <td>Hide confirm message</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>.show()</td>
+                <td>Show confirm message</td>
+                <td>null</td>
+              </tr>
+
+              <tr>
+                <td>.remove()</td>
+                <td>Remove confirm message</td>
+                <td>null</td>
               </tr>
             </table>
           </div>
+          <div class="constructorDiv">
+            <h5 class="typeGroup">Example</h5>
+            <code>
+              let cm = new confirm_message('Confirm', `Are you sure to continue?`, [createButton('btn-message', 'Continue', 'cm.hide()', ''), createButton('btn-message', 'Send', '', '')], 'body');
+              cm.show();
+            </code>
+          </div>
         </div>
       </div>
+
 
       <div class="classItem">
         <div>

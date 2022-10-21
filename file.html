@@ -4,35 +4,23 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
     <script src="utility.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js" class="jqueryLink"></script>
-    <script> let srcBar = new searchBar('#divSearch'); </script>
 </head>
 
 <body>
+
+    <div id="prova" style="width: 100%; height: 100vh;position:fixed; top: 20vh; left:0">
+        <input type="button" onclick="sb.search()" value='search'>
+    </div>
     <div id="divSearch"></div>
 
-    <div id="prova" style="width: 100%; height: 100vh;position:fixed; top: 0; left:0"></div>
-
     <script>
-        let dati = {
-            'linkCondizioniUso': '',
-            'linkCondizioniGenerali': '',
-            'linkPrivacy': '',
-            'function_login': '',
-            'function_register': '',
-            'show_register': true,
-            'show_passwordDimenticata': false,
-            'function_confermaPasswordDimenticata': '',
-            'show_accediSocial': true,
-            'extra_input_registrazione': [],
-            'linkLoginGoogle': '',
-            'linkLoginFacebook': '',
-        }
+        console.log({ 'cioa': 'sdd', 'ss': 'sdd' }.toArray())
+        console.log(objectToArray({ 'cioa': 'sdd', 'ss': 'sdd' }));
 
-        var lg = new loginUI('#prova', dati);
-        console.log(lg.sessoRegistrazione());
-        lg.show();
+
     </script>
 
 </body>
