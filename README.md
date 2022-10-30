@@ -19,9 +19,13 @@ var btn = new Button("Press", "btn", () => {}, "block");
 **Implementation**
 ```javascript
 var btn = new Button("Press", "btn", () => {}, "block");
+
+btn.appendIn('body');
+
+//or
 document.querySelector('body').appendChild(btn);
 
-//Using jQuery
+//or (require jQuery library)
 $('body').append(btn);
 ```
 
@@ -45,25 +49,7 @@ $('body').append(btn);
 
 </details>
 
-<details><summary>Navigation Bar</summary>
 
-## headNavBar
-
-**Constructor**
-
-```javascript
-var hnb = new headNavBar("light", "uJs", "item1", "", "body");
-hnb.show();
-```
-
-> new headNavBar ([theme], [brand], [items], [img], [where]\*)
-
-[theme] = 'light', 'dark'.
-[items] = ex: 'bho'.
-[img] = link of an image.
-[where] = 'header', '#homepage'.
-
-</details>
 
 <details><summary>Login UI</summary>
 
@@ -93,7 +79,7 @@ let options = {
   'show_passwordDimenticata': true,
   'function_confermaPasswordDimenticata': 'confirmMiss()',
   'show_accediSocial': false,
-  'extra_input_registrazione': ["<input type="text" id="course">"],
+  'extra_input_registrazione': [`<input type="text" id="course">`],
   'linkLoginGoogle': '',
   'linkLoginFacebook': ''
 }
@@ -110,12 +96,14 @@ let password1 = $('#password_rg')[0].value;
 let password1 = $('#password2_rg')[0].value;
 ```
 
+![alt text](https://github.com/AlessandroFrasconi/utilityjs/images/login.png?raw=true)
+
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
-| .setLoginFunction()    | Set the login function null    |
-| .setRegisterFunction() | Set the register function null |
-| .show()                | Show the login UI null         |
-| .hide()                | Hide the login UI null         |
+| .setLoginFunction()    | Set the login function | null    |
+| .setRegisterFunction() | Set the register function | null |
+| .show()                | Show the login UI | null         |
+| .hide()                | Hide the login UI | null         |
 
 </details>
 
@@ -141,22 +129,29 @@ let cm = new confirm_message([title], [message], [array of buttons], [where]);
 **Implementation**
 
 ```javascript
-let cm = new confirm_message('Confirm', `Are you sure to continue?`, [createButton('btn-message', 'Continue', 'cm.hide()', ''), createButton('btn-message', 'Send', '', '')], 'body');
+let cm = new confirm_message(
+  'Confirm', 
+  `Are you sure to continue?`,
+  [
+    createButton('btn-message', 'Continue', 'cm.hide()', ''), 
+    createButton('btn-message', 'Send', '', '')
+  ],
+  'body');
 cm.show();
 ```
 
 
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
-| .setTitle([title])    | Set title of confirm message null    |
-| .setMessage([message]) | Set message of confirm message null |
-| .setButtons([buttons])                | Set buttons of confirm message null         |
-| .hide()                | Hide confirm message null         |
+| .setTitle([title])    | Set title of confirm message | null    |
+| .setMessage([message]) | Set message of confirm message | null |
+| .setButtons([buttons])                | Set buttons of confirm message | null         |
+| .hide()                | Hide confirm message | null         |
 | .show()                | Show confirm message        |
-| .remove()                | Remove confirm message null         |
+| .remove()                | Remove confirm message | null         |
 
 </details>
-<details><summary>message</summary>
+<details><summary>!!message</summary>
 </details>
 <details><summary>Month</summary>
 
@@ -202,6 +197,26 @@ new Utility().bootstrapInsert() //for add
 
 </details>
 
+<details><summary>Navigation Bar</summary>
+
+## headNavBar
+
+**Constructor**
+
+```javascript
+var hnb = new headNavBar("light", "uJs", "item1", "", "body");
+hnb.show();
+```
+
+> new headNavBar ([theme], [brand], [items], [img], [where]\*)
+
+[theme] = 'light', 'dark'.
+[items] = ex: 'bho'.
+[img] = link of an image.
+[where] = 'header', '#homepage'.
+
+</details>
+
 <details><summary>jQuery</summary>
 
 ## jQuery integration
@@ -217,8 +232,6 @@ new Utility().jQueryInsert() //for add
 
 ## Methods
 
-**Class "Utility"**
-
 | Method                                           | Description                            | Return                  |
 | ------------------------------------------------ | -------------------------------------- | ----------------------- |
 | createButton([classes], [text], [onclick], [id]) | Make a button                          | HTML Button element     |
@@ -229,6 +242,6 @@ new Utility().jQueryInsert() //for add
 | convertWeekDay([day])                            | Convert days in numbers and vice versa | String ('Lunedì' / '1') |
 | showInParent([where], [what], [clear*])          | Append in parent node                  | --                      |
 | scrollTo([where])                                | Scroll screen at a specific position   | --                      |
-| checkNotEmpty([array])                           | Check each obj is not Empty            | bool (true)             |
+| checkNotEmpty([array])                           | Check each obj is not Empty            | bool (true or false)             |
 
 </details>
