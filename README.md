@@ -3,6 +3,13 @@
 A group of utilty for JavaScript Programmers
 
 - [Button](#Button)
+- [Login IU](#loginIU)
+- [Confirm message](#confirm_message)
+- [Message](#message)
+- [Bootstrap](#Bootstrap integration)
+- [Navigation bar](#headNavBar)
+- [JQuery](#jQuery integration)
+- [Other Functions](#Methods)
 
 <details open><summary>Button</summary>
 
