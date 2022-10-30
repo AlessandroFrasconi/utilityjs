@@ -2,7 +2,7 @@
 
 A group of utilty fro JavaScript Programmers
 
-<details><summary>Button</summary>
+<details open><summary>Button</summary>
 
 ## Button
 
@@ -51,7 +51,7 @@ $('body').append(btn);
 
 
 
-<details><summary>Login UI</summary>
+<details open><summary>Login UI</summary>
 
 ## loginUI
 
@@ -113,7 +113,7 @@ let password1 = $('#password2_rg')[0].value;
 
 </details>
 
-<details><summary>Confirm Message</summary>
+<details open><summary>Confirm Message</summary>
 
 ## confirm_message
 
@@ -157,7 +157,7 @@ cm.show();
 | .remove()                | Remove confirm message | null         |
 
 </details>
-<details><summary>Message</summary>
+<details open><summary>Message</summary>
 
 ## message
 
@@ -180,7 +180,7 @@ new message ([message], [btnText],[onSubmit],[where])
 new message (`Changes applied`, "OK", "window.reload()",'body')
 ```
 </details>
-<details><summary>Month</summary>
+<details open><summary>Month</summary>
 
 ## month
 
@@ -213,7 +213,7 @@ m.toFullName(); // return 'Agosto'
 
 </details>
 
-<details><summary>Bootstrap</summary>
+<details open><summary>Bootstrap</summary>
 
 ## Bootstrap integration
 
@@ -224,7 +224,7 @@ new Utility().bootstrapInsert() //for add
 
 </details>
 
-<details><summary>Navigation Bar</summary>
+<details open><summary>Navigation Bar</summary>
 
 ## headNavBar
 
@@ -244,7 +244,7 @@ hnb.show();
 
 </details>
 
-<details><summary>jQuery</summary>
+<details open><summary>jQuery</summary>
 
 ## jQuery integration
 
@@ -255,7 +255,7 @@ new Utility().jQueryInsert() //for add
 
 </details>
 
-<details><summary>Methods</summary>
+<details open><summary>Methods</summary>
 
 ## Methods
 
