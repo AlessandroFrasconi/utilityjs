@@ -1,10 +1,12 @@
 # Utility Js
 
-A group of utilty fro JavaScript Programmers
+A group of utilty for JavaScript Programmers
+
+- [Button](#Button)
 
 <details open><summary>Button</summary>
 
-## Button
+#Button
 
 **Constructor**
 
