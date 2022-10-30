@@ -96,6 +96,11 @@ let password1 = $('#password_rg')[0].value;
 let password1 = $('#password2_rg')[0].value;
 ```
 
+<p align="center">
+  <img src="https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true" width="350" title="hover text">
+  <img src="https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true" width="350" alt="accessibility text">
+</p>
+
 ![alt text](https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true)
 
 | Method                 | Description                    | Return |
