@@ -96,9 +96,9 @@ let password1 = $('#password_rg')[0].value;
 let password1 = $('#password2_rg')[0].value;
 ```
 
-<p align="center">
+<p style="display: flex">
 <img src="https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true" width="200" title="loginUI">
-</p>
+
 
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
@@ -106,7 +106,7 @@ let password1 = $('#password2_rg')[0].value;
 | .setRegisterFunction() | Set the register function | null |
 | .show()                | Show the login UI | null         |
 | .hide()                | Hide the login UI | null         |
-
+</p>
 </details>
 
 <details><summary>Confirm Message</summary>
