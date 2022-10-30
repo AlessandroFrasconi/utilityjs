@@ -157,7 +157,28 @@ cm.show();
 | .remove()                | Remove confirm message | null         |
 
 </details>
-<details><summary>!!message</summary>
+<details><summary>Message</summary>
+
+## message
+
+**Constructor**
+
+```javascript
+new message ([message], [btnText],[onSubmit],[where])
+```
+
+> new message ([message], [btnText],[onSubmit],[where])
+
+[message] = message to show
+[btnText] = text of the button
+[onSubmit] = function on click the button
+[where] = 'body', '#loginDiv', ...
+
+**Implementation**
+
+```javascript
+new message (`Changes applied`, "OK", "window.reload()",'body')
+```
 </details>
 <details><summary>Month</summary>
 
