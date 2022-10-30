@@ -6,7 +6,7 @@ A group of utilty for JavaScript Programmers
 
 <details open><summary>Button</summary>
 
-#Button
+## Button
 
 **Constructor**
 
