@@ -16,6 +16,15 @@ var btn = new Button("Press", "btn", () => {}, "block");
 
 [display mode] = 'block', 'inline', ...
 
+**Implementation**
+```javascript
+var btn = new Button("Press", "btn", () => {}, "block");
+document.querySelector('body').appendChild(btn);
+
+//Using jQuery
+$('body').append(btn);
+```
+
 | Method                              | Description                                                                  | Return       |
 | ----------------------------------- | ---------------------------------------------------------------------------- | ------------ |
 | .getButton()                        | Return the button                                                            | HTML Element |
@@ -63,19 +72,43 @@ hnb.show();
 **Constructor**
 
 ```javascript
-var lgn = new loginUI(
-  () => {},
-  () => {},
-  "body"
-);
-lgn.show();
+let lgn = new loginUI ([where], [options])
 ```
 
-> new loginUI ([loginFunction], [registerFunction], [where])
+> new loginUI ([where], [options])
 
-[loginFunction] = function to login
-[registerFunction] = function for registation
+[options] = options for login (see implementation)
 [where] = 'body', '#loginDiv', ...
+
+**Implementation**
+
+```javascript
+let options = {
+  'linkCondizioniUso': 'https://www.google.com',
+  'linkCondizioniGenerali': 'https://www.google.com',
+  'linkPrivacy': 'https://www.google.com',
+  'function_login': 'login()',
+  'function_register': 'register()',
+  'show_register': true,
+  'show_passwordDimenticata': true,
+  'function_confermaPasswordDimenticata': 'confirmMiss()',
+  'show_accediSocial': false,
+  'extra_input_registrazione': ["<input type="text" id="course">"],
+  'linkLoginGoogle': '',
+  'linkLoginFacebook': ''
+}
+let lgn = new loginUI ('body', options);
+
+let username = $('#email')[0].value;
+let password = $('#password')[0].value;
+
+let nome = $('#nome')[0].value;
+let cognome = $('#cognome')[0].value;
+let email = $('#email_rg')[0].value;
+let sesso = lg.sessoRegistrazione(); //(m, f, a)
+let password1 = $('#password_rg')[0].value;
+let password1 = $('#password2_rg')[0].value;
+```
 
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
@@ -86,48 +119,59 @@ lgn.show();
 
 </details>
 
-<details><summary>Verify Mail Sent UI</summary>
+<details><summary>Confirm Message</summary>
 
-## verifyMailSent
-
-**Constructor**
-
-```javascript
-var vms = new verifiyMailSent("mail@gmail.com", "body");
-vms.show();
-```
-
-> new verifyMailSent ([mail],[where])
-
-[mail] = e-mail sent mail
-[where] = 'body', '#loginDiv', ...
-
-</details>
-
-<details><summary>Message</summary>
-
-## message
+## confirm_message
 
 **Constructor**
 
 ```javascript
-var mex = new message("Hello Word", "OK", () => {}, "body");
+let cm = new confirm_message([title], [message], [array of buttons], [where]);
 ```
 
-> new message ([message], [btnText],[onSubmit],[where])
+> new confirm_message ([title], [message],[buttons],[where])
 
+[title] = message's title 
 [message] = message to show
-[btnText] = text of the button
-[onSubmit] = function on click the button
+[buttons] = array of buttons buttons (see implementation)
 [where] = 'body', '#loginDiv', ...
 
-</details>
 
+
+**Implementation**
+
+```javascript
+let cm = new confirm_message('Confirm', `Are you sure to continue?`, [createButton('btn-message', 'Continue', 'cm.hide()', ''), createButton('btn-message', 'Send', '', '')], 'body');
+cm.show();
+```
+
+
+| Method                 | Description                    | Return |
+| ---------------------- | ------------------------------ | ------ |
+| .setTitle([title])    | Set title of confirm message null    |
+| .setMessage([message]) | Set message of confirm message null |
+| .setButtons([buttons])                | Set buttons of confirm message null         |
+| .hide()                | Hide confirm message null         |
+| .show()                | Show confirm message        |
+| .remove()                | Remove confirm message null         |
+
+</details>
+<details><summary>message</summary>
+</details>
 <details><summary>Month</summary>
 
 ## month
 
 **Constructor**
+
+```javascript
+var m = new month([month]);
+```
+> new month ([month])
+
+[month] = '0', 'gennaio'
+
+**Implementation**
 
 ```javascript
 var m = new month("agosto");
@@ -139,10 +183,6 @@ var m = new month(7);
 m.toFullName(); // return 'Agosto'
 ```
 
-> new month ([month])
-
-[month] = '0', 'gennaio'
-
 | Method          | Description                                                         | Return       |
 | --------------- | ------------------------------------------------------------------- | ------------ |
 | .toInt()        | Get number [0-11] of the month from a text ('febbraio' -> return 1) | number       |
@@ -150,51 +190,7 @@ m.toFullName(); // return 'Agosto'
 | .getAllMonths() | Return all month as Array                                           | string array |
 
 </details>
-</details>
 
-<details><summary>Search Bar</summary>
-
-## month
-
-**Constructor**
-
-```javascript
-var sBar = new searchBar("#divSearch");
-sBar.popolate([
-  {
-    html: "Prima opzione di ricerca",
-    onclick: "console.log('clicked')",
-  },
-  {
-    html: "Seconda opzione di ricerca",
-    onclick: "console.log('clicked')",
-  },
-]);
-sBar.place();
-```
-
-> new searchBar ([divContainer])
-
-[divContainer] = '#divSearch', '.searchContainer', ecc..
-
-| Method                 | Description                           | Return |
-| ---------------------- | ------------------------------------- | ------ |
-| .popolate([arrayJSON]) | Insert Options Menu                   | --     |
-| .place()               | Place search bar in the div container | --     |
-
-v [arrayJSON] v
-[
-{
-html: "Prima opzione di ricerca",
-onclick: "console.log('clicked')",
-},
-{
-html: "Seconda opzione di ricerca",
-onclick: "console.log('clicked')",
-},
-]
-
-</details>
 <details><summary>Bootstrap</summary>
 
 ## Bootstrap integration
