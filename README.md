@@ -96,7 +96,7 @@ let password1 = $('#password_rg')[0].value;
 let password1 = $('#password2_rg')[0].value;
 ```
 
-![alt text](https://github.com/AlessandroFrasconi/utilityjs/images/login.png?raw=true)
+![alt text](https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true)
 
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
