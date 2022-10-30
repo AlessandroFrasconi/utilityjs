@@ -6,9 +6,9 @@ A group of utilty for JavaScript Programmers
 - [Login IU](#loginIU)
 - [Confirm message](#confirm_message)
 - [Message](#message)
-- [Bootstrap](#Bootstrap integration)
+- [Bootstrap](#Bootstrap)
 - [Navigation bar](#headNavBar)
-- [JQuery](#jQuery integration)
+- [JQuery](#jQuery)
 - [Other Functions](#Methods)
 
 <details open><summary>Button</summary>
