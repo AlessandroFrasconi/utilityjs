@@ -96,7 +96,9 @@ let password1 = $('#password_rg')[0].value;
 let password1 = $('#password2_rg')[0].value;
 ```
 
+<p align="center">
 <img src="https://github.com/AlessandroFrasconi/utilityjs/blob/main/images/login.png?raw=true" width="200" title="loginUI">
+</p>
 
 | Method                 | Description                    | Return |
 | ---------------------- | ------------------------------ | ------ |
