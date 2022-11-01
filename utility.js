@@ -216,7 +216,7 @@ function validateEmail(email) {
         z-index: 10;
         background-color: white;
         border: 1px solid grey;
-        padding: 4vh;
+        padding: 30px;
         border-radius: 0.5vh;
         overflow-y: auto;
         max-height: 100vh;
@@ -245,13 +245,13 @@ function validateEmail(email) {
         margin: auto;
         border: 1px solid grey;
         border-radius: 0.5vh;
-        padding: 1.5vh 2vh;
-        margin-top: 2vh;
+        padding: 10px 15px;
+        margin-top: 15px;
     }
     .header_container{
         width: 100%;
         text-align: center;
-        padding: 2vh 0;
+        padding: 15px 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -280,7 +280,7 @@ function validateEmail(email) {
     
     .top_container{
         text-align: center;
-    padding: 4vh 0
+        padding: 30px 0
     }
     
     #registrati_div{
@@ -371,13 +371,13 @@ function validateEmail(email) {
     
     
     .imgs_container{
-        margin: 2vh 0;
+        margin: 15px 0;
     }
     
     .imgs_container img{
         border-radius: 50%;
         width: 40px;
-        padding: 1vh;
+        padding: 7px;
         margin-right: 2vw;
         box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
         cursor: pointer;
@@ -387,7 +387,7 @@ function validateEmail(email) {
         width: 90%;
         display: flex;
         margin: auto;
-        margin-top: 2vh;
+        margin-top: 15px;
         font-size: 14px;
     }
     
@@ -401,13 +401,13 @@ function validateEmail(email) {
     
     .accedi_btn, .register_btn{
         width: 90%;
-        margin-top: 3vh;
+        margin-top: 20px;
         background: var(--primary);
         color: white;
         border: 1px solid transparent;
-        padding: 1vh;
+        padding: 7px;
         border-radius: 0.5vh;
-        margin-bottom: 5vh;
+        margin-bottom: 40px;
         transition: 0.3s;
         cursor: pointer;
     }
@@ -434,7 +434,7 @@ function validateEmail(email) {
     
     #recupero_mail label{
         font-size: 14px;
-        margin-top: 2vh;
+        margin-top: 15px;
     }
     
     
