@@ -101,10 +101,11 @@ class loginUI {
                     </div>
                     </label>
                 </div>
-                <div id="extra_input"></div>
 
                 <input type="password" id="password_rg" placeholder="Password" />
                 <input type="password" id="password2_rg" placeholder="Ripeti password" />
+
+                <div id="extra_input"></div>
 
 
                 `+ ((dati.linkCondizioniUso != undefined && dati.linkCondizioniGenerali != undefined && dati.linkPrivacy != undefined) ? `
@@ -137,7 +138,7 @@ class loginUI {
                     Annulla
                 </button>
                 <button class="btn btn-primary btn_big_mobile" style="margin-top: 2vh; width: 100%; border-radius: 0.5vh"
-                    id="btn_recupero" onclick="`+ dati.function_confermaPasswordDimenticata + `()">
+                    id="btn_recupero" onclick="`+ dati.function_confermaPasswordDimenticata + `">
                     Conferma
                 </button>
             </div>
@@ -153,7 +154,6 @@ function show_recupera_password() {
     $('#login_subDiv').hide();
 }
 
-    
 function mostraAccedi() {
     $('#registrati_div').hide();
     $('#accedi_div').fadeIn();
@@ -168,15 +168,7 @@ function mostraRegistrati() {
     $('.header_title')[1].className = 'header_title header_title_active';
 }
 
-function viewInfo() {
-    if ($('.info')[0].style.display == 'block') {
-        $('.info').fadeOut();
-    } else {
-        $('.info').fadeIn();
-    }
-}
-
-function erroriRegistrazione(email, nome, cognome, password, password2, codeTelegram) {
+function erroriRegistrazione(email, nome, cognome, password, password2) {
     let errori = [];
 
     if (!validateEmail(email)) errori.push('La mail non è correttamente formattata');
@@ -184,7 +176,6 @@ function erroriRegistrazione(email, nome, cognome, password, password2, codeTele
     if (cognome.length == 0) errori.push('Inserire un cognome');
     if (password.length == 0) errori.push('Inserire una password');
     if (password != password2) errori.push('Le due password non coincidono');
-    if (codeTelegram.length == 0) errori.push('Inserire il codice di telegram');
 
 
     if (errori.length == 0) return false;
@@ -212,10 +203,9 @@ function validateEmail(email) {
     }
     #login{
         width: 40vw;
-        height: auto;
+        height: 80vh;
         z-index: 10;
         background-color: white;
-        border: 1px solid grey;
         padding: 30px;
         border-radius: 0.5vh;
         overflow-y: auto;
@@ -284,7 +274,7 @@ function validateEmail(email) {
     }
     
     #registrati_div{
-        height: 85vh;
+        height: 80vh;
     }
     
     
@@ -427,6 +417,7 @@ function validateEmail(email) {
     
     #recupero_mail{
         display: none;
+        
     }
     #recupero_mail .header_title{
         width: 34%
@@ -439,10 +430,15 @@ function validateEmail(email) {
     
     
     #email_recupero{
-        width: 100%;
+        width: calc(100% - 32px);
     }
     
     @media(max-width: 900px){
+
+        #recupero_mail{
+            width: calc(100% - 30px);
+            padding: 10px 2vh;
+        }
     
         #login{
             position: fixed;
