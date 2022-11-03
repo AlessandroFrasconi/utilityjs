@@ -54,8 +54,11 @@ class loginUI {
                         ` + (dati.show_accediSocial ? `
                     <label class="top_label">con il social che preferisci</label>
                     <div class="imgs_container">
-                        <img onclick="`+ dati.linkLoginGoogle + `" src="https://img.icons8.com/color/64/000000/google-logo.png" />
-                        <img onclick="`+ dati.linkLoginFacebook + `" src="https://img.icons8.com/fluency/64/000000/facebook-new.png" />
+                        <img onclick="`+ dati.linkLoginGoogle + `" src="https://img.icons8.com/color/64/000000/google-logo.png" />`
+                + (dati.linkLoginFacebook != '' ? `
+                        <img onclick="`+ dati.linkLoginFacebook + `" src="https://img.icons8.com/fluency/64/000000/facebook-new.png" />` : '')
+                +
+                `
                     </div>
                     <label class="top_label">oppure con la tue email e password</label>
                 `: `<label class="top_label">Con la tue email e password</label>`) + `
