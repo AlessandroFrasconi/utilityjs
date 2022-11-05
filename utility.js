@@ -77,6 +77,8 @@ class loginUI {
                         <a href="#" onclick="show_recupera_password()">Hai dimenticato la password?</a>
                     </div>` : '') + `
                     <button class="accedi_btn" onclick="`+ dati.function_login + `">Accedi</button>
+                    `+ (dati.anonymous_login_function != null && dati.anonymous_login_function != undefined ? `
+                    <button class="continue_without_email_btn" onclick="`+ dati.anonymous_login_function + `">Continua senza email</button>` : '') + `
                 </div>
             </div>
 
@@ -398,7 +400,7 @@ function validateEmail(email) {
     text-decoration: underline;
     }
     
-    .accedi_btn, .register_btn{
+    .accedi_btn, .continue_without_email_btn, .register_btn{
         width: 90%;
         margin-top: 20px;
         background: var(--primary);
@@ -409,6 +411,17 @@ function validateEmail(email) {
         margin-bottom: 40px;
         transition: 0.3s;
         cursor: pointer;
+    }
+
+    .continue_without_email_btn{
+        background: white;
+        color: grey;
+        border: 1px solid lightgray;
+        font-size: 14px;
+    }
+
+    .accedi_btn{
+        margin-bottom: 10px;
     }
     
     
