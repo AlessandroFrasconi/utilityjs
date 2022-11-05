@@ -15,6 +15,10 @@ class loginUI {
             'extra_input_registrazione': [],
             'linkLoginGoogle': '',
             'linkLoginFacebook': '',
+            'logo':{
+                'src': '/meia',
+                'classes': 'ciaon'
+            },
         }
 
         let lg = new loginUI(dati);
@@ -40,6 +44,8 @@ class loginUI {
             <div class="cartaLogin carta1">
                 <div id="login" class="centered">
                     <div id="login_subDiv">
+                    `+ (dati.logo != null ? `
+                    <img src="`+ dati.logo.src + `" class="img_logo ` + dati.logo.classes + `">` : ``) + `
                         <div class="header_container">
                             <div class="header_title header_title_active" onclick="mostraAccedi()">
                             Accedi
@@ -53,9 +59,9 @@ class loginUI {
                         <h2 class="top_title">Accedi</h2>
                         ` + (dati.show_accediSocial ? `
                     <label class="top_label">con il social che preferisci</label>
-                    <div class="imgs_container">
-                        <img onclick="`+ dati.linkLoginGoogle + `" src="https://img.icons8.com/color/64/000000/google-logo.png" />`
-                + (dati.linkLoginFacebook != '' ? `
+                    <div class="imgs_container">` + (dati.linkLoginGoogle != '' && dati.linkLoginGoogle != null && dati.linkLoginGoogle != undefined ? `
+                        <img onclick="`+ dati.linkLoginGoogle + `" src="https://img.icons8.com/color/64/000000/google-logo.png" />` : ``)
+                + (dati.linkLoginFacebook != '' && dati.linkLoginFacebook != null && dati.linkLoginFacebook != undefined ? `
                         <img onclick="`+ dati.linkLoginFacebook + `" src="https://img.icons8.com/fluency/64/000000/facebook-new.png" />` : '')
                 +
                 `

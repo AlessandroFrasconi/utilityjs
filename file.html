@@ -11,14 +11,42 @@
 
 <body>
 
-    <div id="prova" style="width: 100%; height: 100vh;position:fixed; top: 20vh; left:0">
-        <input type="button" onclick="sb.search()" value='search'>
+    <div id="prova" style="width: 100%; height: 100vh;">
     </div>
     <div id="divSearch"></div>
 
     <script>
-        console.log({ 'cioa': 'sdd', 'ss': 'sdd' }.toArray())
-        console.log(objectToArray({ 'cioa': 'sdd', 'ss': 'sdd' }));
+        let dati = {
+            'linkCondizioniUso': '',
+            'linkCondizioniGenerali': '',
+            'linkPrivacy': '',
+            'function_login': '',
+            'function_register': '',
+            'show_register': true,
+            'show_passwordDimenticata': false,
+            'function_confermaPasswordDimenticata': '',
+            'show_accediSocial': true,
+            'extra_input_registrazione': [],
+            'linkLoginGoogle': 'asd',
+            'linkLoginFacebook': 'asd',
+            'logo': {
+                'src': '/images/login.png',
+                'classes': 'btn'
+            },
+        }
+
+        let lg = new loginUI('#prova', dati);
+        lg.show();
+
+        let username = $('#email')[0].value;
+        let password = $('#password')[0].value;
+
+        let nome = $('#nome')[0].value;
+        let cognome = $('#cognome')[0].value;
+        let email = $('#email_rg')[0].value;
+        let sesso = lg.sessoRegistrazione(); //(m, f, a)
+        let password1 = $('#password_rg')[0].value;
+        let password2 = $('#password2_rg')[0].value;
 
 
     </script>
