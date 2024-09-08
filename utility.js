@@ -1,3 +1,5 @@
+//Versione 1.0
+
 class loginUI {
     constructor(where, dati) {
         /*
@@ -1015,3 +1017,46 @@ Date.prototype.toDateInputValue = (function () {
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0, 10);
 })
+
+
+
+function loading(bool, theme = 'light'){
+if(bool){
+    let film = document.createElement('div');
+    film.style.backgroundColor = (theme == 'light' ? 'white' : 'black');
+    film.style.opacity = '0.6';
+    film.style.width = '100%';
+    film.style.height = '100vh';
+    film.style.position = 'fixed';
+    film.style.top = '0';
+    film.style.left = '0';
+    film.id = 'filmDiv';
+    $('#filmDiv').remove();
+    $('body').append(film);
+}else{
+    $('#filmDiv').remove();
+}
+}
+
+
+function pad(number, length) {
+// Converte il numero in stringa
+var str = '' + number;
+
+// Aggiunge zeri fino a raggiungere la lunghezza desiderata
+while (str.length < length) {
+    str = '0' + str;
+}
+
+return str;
+}
+
+function isElementInViewport(el) {
+const rect = el.getBoundingClientRect();
+return (
+rect.top >= 0 &&
+rect.left >= 0 &&
+rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+);
+}
